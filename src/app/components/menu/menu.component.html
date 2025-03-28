@@ -1,0 +1,31 @@
+<style>
+    .menu {
+        display: flex;
+        gap: 15px;
+        background-color: var(--archif-secondary-color);
+        border-radius: 46px;
+        padding: 4px;
+    }
+    .menu-item {
+        border: none;
+        background: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 10px 24px;
+        transition-duration: 300ms;
+        color:var(--archif-primary-color)
+    }
+    .active {
+        background-color: white;
+        border: 1px solid var(--archif-border-color);
+        color: var(--archif-primary-color);
+        border-radius: 24px;
+        padding: 10px 24px;
+       
+    }
+</style>
+<div class="menu">
+    <a routerLink="/" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home </a>
+    <a routerLink="/buy" class="menu-item"  routerLinkActive="active">Buy</a>
+    <a routerLink="/dashboard" class="menu-item"  routerLinkActive="active">Sell</a>
+</div>

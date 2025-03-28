@@ -1,0 +1,49 @@
+<style>
+    .main{
+        margin-top: 170px;
+        text-align: center;
+        position: relative;
+    }
+    .card-container{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap:28px;
+        z-index: 5;
+    }
+    .show-more-button-container{
+        padding: 64px 0;
+        margin-bottom: 8px;
+        border-bottom:1px solid rgba(237, 237, 237, 1);
+    }
+    .show-more-button{
+        font-size: 20px;
+        font-weight: 600px;
+    }
+    .watermark-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top:-16%;
+    }
+    .divider{
+        width:100%;
+        height:1px;
+        margin-bottom:64px;
+        background-color:rgba(237, 237, 237, 1);
+    }
+</style>
+<section class="main">
+    <div class="watermark-container">
+        <water-mark-text [customStyle]="{fontSize:'180px'}" label="CATEGORIES"></water-mark-text>
+    </div>
+    <div class="card-container">
+        @for(card of data;track card.category){
+            <category-card [title]="card.category" [productNumber]="card.productsNumber" [heading]="card.category" [images]="card.images"></category-card>
+        }
+    </div>
+    <div class="show-more-button-container flex justify-center">
+        <button class="show-more-button">Show More</button>
+    </div>
+    <div class="divider"></div>
+</section>

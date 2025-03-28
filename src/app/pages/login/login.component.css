@@ -1,0 +1,106 @@
+.container{
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: "Helvetica Neue";
+    overflow-y: hidden;
+}
+.login-background-image-container{
+    height:100%;
+    padding:24px;
+    position: relative;
+}
+#login-background-image{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    border-radius:24px;
+}
+.login-form-container{
+    padding:0 120px 
+}
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 16px;
+}
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+input {
+    padding: 10px;
+    padding-left: 20px;
+    border: 1px solid rgba(154, 168, 188, 1);
+    border-radius: 16px;
+    font-size: 16px;
+    width: 100%;
+}
+input:focus{
+    outline: 2px solid #000000;
+    outline-offset: -2px;
+}
+.password-container {
+    position: relative;
+}
+.eye-icon {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 20px;
+}
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+    font-size: 14px;
+    color: #777;
+}
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    background: white;
+}
+.google-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+.footer {
+    font-size: 14px;
+    margin-top: 24px;
+    text-align: center;
+}
+.footer > *{
+    font-size: 14px;
+    line-height: 20px;
+}

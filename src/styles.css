@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --archif-primary-color:#000000;
+    --archif-secondary-color:#ffffff;
+    --archif-border-color:rgba(210, 211, 206, 1);
+    font-size: 16px;
+}
+@font-face {
+    font-family: 'heliosrounded';
+    src: url('/assets/fonts/heliosrounded.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    font-family:"Helvetica Neue", sans-serif;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+button{
+    background-color: transparent;
+    border:0;
+    cursor: pointer;
+}
+.flex{
+    display:flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-start{
+    justify-content: start;
+}
+.justify-end{
+    justify-content: end;
+}
+.items-center{
+    align-items: center;
+}
+.items-start{
+    align-items: start;
+}
+.items-end{
+    align-items: end;
+}

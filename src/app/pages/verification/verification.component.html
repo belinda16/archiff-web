@@ -1,0 +1,38 @@
+<style>
+    main{
+        height: 100%;
+        background-color: var(--archiff-secondary-color);
+    }
+    .watermark-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .watermark-container:nth-of-type(1){
+        top:20%;
+    }
+    .watermark-container:nth-of-type(2) {
+        top:40%;
+    }
+    .watermark-container:nth-of-type(3) {
+        top:60%;
+    }
+</style>
+<main>
+    <div style="height: 100%;">
+        <app-header></app-header>
+        <div class="watermark-container first-water-mark">
+            <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIFF"></water-mark-text>
+        </div>
+        <div class="watermark-container">
+            <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIFF"></water-mark-text>
+        </div>
+        <div class="watermark-container">
+            <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIFF"></water-mark-text>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>  
+</main>

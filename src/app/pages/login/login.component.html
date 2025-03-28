@@ -1,0 +1,41 @@
+
+<div style="height: 100%;" class="flex flex-column">
+    <app-header></app-header>
+    <div class="container">
+        <div style="padding:24px">
+            <div class="login-background-image-container">
+                <img id="login-background-image" src="/assets/images/archif-bg.svg" alt="A woman holding a bag" />
+            </div>
+        </div>
+        <div class="login-form-container flex justify-center items-center flex-column">
+            <div style="width:100%;">
+                <h2>Welcome Back</h2>
+                <form>
+                    <div style="margin-bottom: 24px;">
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="jane.smith@co.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <div class="password-container">
+                                <input type="password" id="password" placeholder="********">
+                                <img src="/assets/icons/password-eye.svg" class="eye-icon" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="login-button">SIGN IN</button>
+                </form>
+                <div class="divider">or</div>
+                <button class="google-btn">
+                    <img src="/assets/icons/google.svg" />
+                    Continue with Google
+                </button>
+                <div class="footer">
+                    <span style="color:rgba(114, 129, 151, 1)">Don&apos;t have an account? </span> <a style="text-decoration: underline; color: rgba(9, 9, 9, 1);" href="#">Create Account</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

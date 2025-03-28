@@ -1,0 +1,112 @@
+<style>
+.main{
+    margin-top:97px;
+    padding:120px 300px;
+    border-block: 1px solid rgba(237, 237, 237, 1);
+    font-family: 'Helvetica Neue';
+}
+.review-container {
+    display: flex;
+    gap: 150px;
+    max-width: 900px;
+}
+
+.review-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header p {
+    font-size: 18px;
+    color: #000;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.review-content {
+    max-width: 500px;
+    position: relative;
+}
+.quote-icon {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top:-30%;
+    left:0;
+}
+.review-text {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    line-height: 150%;
+}
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 48px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #c4a676;
+    border-radius: 50%;
+}
+
+.author-info .name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.author-info .designation {
+    font-size: 16px;
+    color:rgba(107, 114, 128, 1);
+    font-weight: 400;
+}
+</style>
+<section class="main">
+    <div class="review-container">
+        <div class="review-header flex justify-between">
+            <p>Top reviews from our<br>Clients</p>
+            <div class="nav-buttons">
+                <button class="prev-btn">
+                    <img src="/assets/icons/arrow-left.svg" alt="" />
+                </button>
+                <button class="next-btn">
+                    <img src="/assets/icons/arrow-right.svg" alt="" />
+                </button>
+            </div>
+        </div>
+        <div class="review-content flex flex-column justify-between">
+            <div class="quote-icon">
+                <img src="/assets/icons/apostrophe.svg" alt="" />
+            </div>
+            <p class="review-text">
+                On Days When I Need Extra Energy To Get Through My Tasks, 
+                SWEET PASTRIES My Go-To. It&apos;s Refreshing And 
+                Keeps Me Alert Without Making Me Feel Wired.
+            </p>
+            <div class="review-author">
+                <span class="avatar"></span>
+                <div class="author-info">
+                    <p class="name">Kacy Bartlett</p>
+                    <p class="designation">Product Designer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
