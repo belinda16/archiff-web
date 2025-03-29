@@ -1,124 +1,4 @@
-<style>
 
-   .main-section{
-        margin-top: 170px;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-    }
-    .watermark-container {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top:-16%;
-        width: 100%;
-    }
-    .grid-container{
-        position: relative;
-        display: grid;
-        grid-template-columns: 4fr 2fr;
-        gap:24px;
-        z-index: 10;
-    }
-    .big-gagdet-card{
-        background-color: rgba(242, 244, 245, 1);
-        padding:70px;
-        border-radius: 16px;
-        position: relative;
-    }
-    .gagdet-shop-button{
-        background-color:var(--archif-primary-color);
-        color:var(--archif-secondary-color);
-        padding:10px 36px;
-        margin-top: 24px;
-        font-family: 'Helvetica';
-    }
-    .dash{
-        width:24px;
-        height: 2px;
-        background-color: rgba(9, 9, 9, 1);;
-    }
-    .gagdet-card-text-container{
-        gap:8px;
-    }
-    .gagdet-card-text-container span{
-        color:rgba(9, 9, 9, 1);
-        font-weight: 700; 
-        font-size: 14px;
-    }
-    .gadget-title{
-        margin-top:16px;
-        text-align: left;
-        font-size: 48px;
-        font-family: 'heliosrounded';
-        color: rgba(25, 28, 31, 1);
-        font-weight: 400;
-    }
-    .gadet-discount-info{
-        margin-top: 24px;
-        text-align: left;
-        color: rgba(71, 81, 86, 1);
-        font-family: 'Helvetica';
-    }
-    .gadet-discount-info,.gadet-discount-info{
-        font-family: 'Helvetica';
-    }
-    .medium-gadget-card-container{
-        gap:24px;
-    }
-    .medium-gadget-card{
-        color:white;
-        background-color: rgba(25, 28, 31, 1);
-        padding:40px; 
-        border-radius: 16px;
-        text-align: left;
-        overflow-y: hidden;
-        position:relative;
-        flex-grow: 1;
-    }
-    .medium-gadget-card:last-child{
-        display: flex;
-        background-color: rgba(242, 244, 245, 1);
-        gap:24px;
-        color:rgba(25, 28, 31, 1);
-    }
-    .medium-gadget-card-title h2{
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-    .medium-gadget-card-title h3{
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 32px;
-    }
-    .medium-card-image{
-        position:absolute;
-        top:20%;
-        right: 0;
-    }
-    .gadget-price{
-        position: absolute;
-        right: 8%;
-        top:8%;
-        background-color: rgba(9, 9, 9, 1);
-        color:white;
-        border-radius: 50%;
-        height: 100px;
-        width: 100px;
-        font-size:24px;
-        font-weight: 600;
-        line-height: 100px;
-    }
-    .features-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap:24px;
-        padding:24px;
-        border:1px solid rgba(228, 231, 233, 1);
-        margin-top:28px;
-    }
-</style>
 <section class="main-section">
     <div class="watermark-container">
         <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIF GADGETS"></water-mark-text>
@@ -136,36 +16,20 @@
                     <h1>CONSOLES</h1>
                  </div>
                  <p class="gadet-discount-info">Save up to 50% on select Xbox games. Get 3 months of PC Game Pass for $2 USD.</p>
-                 <button class="gagdet-shop-button flex items-center">
-                    <span>SHOP NOW</span>
-                    <span>
-                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.8761 12.8076H20.3761" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M13.6261 6.05762L20.3761 12.8076L13.6261 19.5576" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                 </button>
+                 <shop-button label="SHOP NOW"></shop-button>
             </div>
             <div>
                 <img src="/assets/images/xbox-one.svg" alt="an xbox one" />
             </div>
         </div>
-        <div class="flex flex-column medium-gadget-card-container">
+        <div class="flex flex-row medium-gadget-card-container">
             <div class="medium-gadget-card ">
                 <div class="medium-gadget-card-title">
                     <h2>SUMMER SALES</h2>
                     <h3>New Google </h3>
                     <h3>Pixel 6 Pro</h3>
                 </div>
-                <button style="background-color: white; color: black;" class="gagdet-shop-button flex items-center">
-                    <span>SHOP NOW</span>
-                    <span>
-                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.8761 12.8076H20.3761" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M13.6261 6.05762L20.3761 12.8076L13.6261 19.5576" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                </button>
+                <shop-button iconColor="#000000"  [customStyle]="{backgroundColor:'white',color:'black'}" label="SHOP NOW"></shop-button>
                 <div class="medium-card-image">
                     <img style="height:100%" src="/assets/images/pixel-pro.svg" alt="A pixel pro phone" />
                 </div>
@@ -179,15 +43,7 @@
                         <h2 style="font-size: 24px;font-weight: 600; text-align: left;">Xiaomi FlipBuds Pro </h2>
                         <h3>$2.99 USD</h3>
                     </div>
-                    <button style="background-color:rgba(9, 9, 9, 1); color: white;" class="gagdet-shop-button flex items-center">
-                        <span>SHOP NOW</span>
-                        <span>
-                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.8761 12.8076H20.3761" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M13.6261 6.05762L20.3761 12.8076L13.6261 19.5576" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
+                    <shop-button label="SHOP NOW"></shop-button>
                  </div>
             </div>
         </div>

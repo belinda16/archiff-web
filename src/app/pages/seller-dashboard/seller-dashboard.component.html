@@ -1,8 +1,38 @@
-<style>
-    .main{
-        height: 100%;
-    }
-</style>
-<main class="main">
+<main class="dashboard">
     <navbar></navbar>
+    <div class="store-toolbar flex items-center justify-between">
+        <div class="store-info flex items-center">
+            <img src="/assets/images/store-logo.svg" />
+            <h1>Store Name</h1>
+        </div>
+        <div>
+            <input class="search-input" type="text" placeholder="Search..." />
+        </div>
+        <button class="add-product">ADD PRODUCT</button>
+    </div>
+    <main class="dashboard-content">
+        <aside>
+            <nav class="flex flex-column  sidebar">
+              <a routerLinkActive="active" routerLink="/sell/" [routerLinkActiveOptions]="{ exact: true }" class="flex items-center sidebar-item">
+                  <img src="/assets/icons/dashboard-icon.svg" />
+                  <span>Dashboard</span>
+              </a>
+              <a routerLinkActive="active" routerLink="/sell/offers" class="flex items-center sidebar-item">
+                  <img src="/assets/icons/offers-icon.svg" />
+                  <span>Offers</span>
+              </a>
+              <a routerLinkActive="active" routerLink="/sell/products" class="flex items-center sidebar-item">
+                  <img src="/assets/icons/products-icon.svg" />
+                  <span>Products</span>
+              </a>
+              <a routerLinkActive="active" routerLink="/settings" class="flex items-center sidebar-item">
+                  <img src="/assets/icons/settings-icon.svg" />
+                  <span>Profile and Settings</span>
+              </a>
+            </nav>
+        </aside>
+      <div class="dashboard-info">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
 </main>

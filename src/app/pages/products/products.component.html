@@ -1,0 +1,67 @@
+<style>
+    .offer-table-container{
+         border:1px solid rgba(230, 230, 230, 1);
+    }
+   .custom-table {
+     width: 100%;
+     background: white;
+   }
+ 
+   th {
+     background: #f1f1f1;
+     color:rgba(0, 0, 0, 1);
+     text-align: left;
+   }
+ 
+   td {
+     color:rgba(99, 99, 99, 1);
+   }
+   th,td{
+     padding-block:24px;
+   }
+ 
+   .contact-link {
+     color:rgba(99, 99, 99, 1);
+     text-decoration: underline;
+     margin-right: 10px;
+   }
+ 
+   .p-button-danger {
+     color: red;
+   }
+ </style>
+ <div>
+     <h1 class="dashboard-info-header">Products</h1>
+ 
+ <div class="offer-table-container">
+    
+     <p-table [value]="products" class="custom-table">
+        <ng-template pTemplate="header">
+            <tr>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Stock</th>
+              <th>Promo Status</th>
+              <th>Created Date</th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product let-i="rowIndex">
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.stock }}</td>
+              <td>
+                <span class="promo-badge">{{ product.promoStatus }}</span>
+              </td>
+              <td>{{ product.createdDate }}</td>
+            <td> 
+             <button>
+                 <img src="/assets/icons/delete-bin.svg" />
+             </button>
+             </td>
+         </tr>
+     </ng-template>
+     </p-table>
+ </div>
+ </div>

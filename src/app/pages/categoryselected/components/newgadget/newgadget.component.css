@@ -1,0 +1,25 @@
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+    gap:24px;
+    margin:90px 100px;
+}
+.card{
+    border-radius: 16px;
+    background-color: rgba(242, 244, 245, 1);
+    padding:0 36px;
+}
+.card:last-child{
+    background-color: rgba(25, 28, 31, 1);
+}
+.card-text{
+    gap:16px;
+}
+.card-title{
+    padding:8px 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color:white;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 700;
+}

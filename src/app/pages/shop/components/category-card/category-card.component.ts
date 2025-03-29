@@ -4,7 +4,6 @@ import { Component, Input } from '@angular/core';
   selector: 'category-card',
   imports: [],
   templateUrl: './category-card.component.html',
-  styleUrl: './category-card.component.css'
 })
 export class CategoryCardComponent {
   @Input() heading = "";

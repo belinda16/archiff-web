@@ -1,0 +1,68 @@
+<style>
+   .offer-table-container{
+        border:1px solid rgba(230, 230, 230, 1);
+   }
+  .custom-table {
+    width: 100%;
+    background: white;
+  }
+
+  th {
+    background: #f1f1f1;
+    color:rgba(0, 0, 0, 1);
+    text-align: left;
+  }
+
+  td {
+    color:rgba(99, 99, 99, 1);
+  }
+  th,td{
+    padding-block:24px;
+  }
+
+  .contact-link {
+    color:rgba(99, 99, 99, 1);
+    text-decoration: underline;
+    margin-right: 10px;
+  }
+
+  .p-button-danger {
+    color: red;
+  }
+</style>
+<div>
+    <h1 class="dashboard-info-header">Offers</h1>
+
+<div class="offer-table-container">
+   
+    <p-table [value]="offers" class="custom-table">
+    <ng-template pTemplate="header">
+        <tr>
+        <th>Offer</th>
+        <th>Option</th>
+        <th>Option</th>
+        <th>Option</th>
+        <th>Date</th>
+        <th>Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-offer let-i="rowIndex">
+        <tr>
+        <td>{{ offer.offer }}</td>
+        <td>{{ offer.option1 }}</td>
+        <td>{{ offer.option2 }}</td>
+        <td>{{ offer.option3 }}</td>
+        <td>{{ offer.date }}</td>
+        <td>
+            <a href="#" class="contact-link">{{ offer.contact }}</a>
+        </td>
+        <td> 
+            <button>
+                <img src="/assets/icons/delete-bin.svg" />
+            </button>
+        </td>
+        </tr>
+    </ng-template>
+    </p-table>
+</div>
+</div>

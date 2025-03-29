@@ -18,7 +18,9 @@ html,body{
 }
 body{
     height: 100%;
+    max-width: 100vw;
     font-family:"Helvetica Neue", sans-serif;
+    overflow-x: hidden;
 }
 *,*::before,*::after{
     box-sizing: border-box;

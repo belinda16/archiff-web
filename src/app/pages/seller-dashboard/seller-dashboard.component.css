@@ -1,0 +1,64 @@
+.dashboard{
+    min-height:100%;
+    background-color: white;
+}
+.store-toolbar{
+    padding:12px 40px;
+    border-bottom:1px solid rgba(237, 237, 237, 1);
+}
+.store-info{
+    gap:16px;
+}
+.search-input{
+    border:1px solid rgba(154, 168, 188, 1);
+    padding:10px;
+    padding-inline: 50px 250px;
+    border-radius: 16px;
+}
+.add-product{
+    background-color: rgba(0, 0, 0, 1);
+    color:white;
+    font-weight: 700;
+    font-size: 14px;
+    padding:0 36px;
+    line-height: 48px;
+}
+.dashboard-content{
+    height: 100%;
+    padding:0 40px;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}
+aside{
+    border-right: 1px solid rgba(215, 215, 224, 1);
+    height: 100%;
+    width:248px;
+    background-color: white;
+    padding:0 8px;
+}
+.sidebar{
+    margin-top: 24px;
+    gap:16px;
+}
+.sidebar-item{
+    padding:10px 20px;
+    gap:16px;
+    cursor: pointer;
+}
+.sidebar-item span{
+    color: rgba(23, 23, 27, 1);
+    font-size: 14px;
+}
+.sidebar-item:nth-child(4){
+    border-top:1px solid rgba(215, 215, 224, 1);
+    padding-block: 14px;
+}
+.active{
+    background-color: rgba(239, 239, 244, 1);
+    border-radius: 8px;
+}
+.dashboard-info{
+    margin:54px  auto;
+    width:100%;
+    padding:0 75px;
+}

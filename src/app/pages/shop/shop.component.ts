@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { ShopFilterBarComponent } from "./components/shop-filter-bar/shop-filter-bar.component";
-import { WaterMarkTextComponent } from "../../components/water-mark-text/water-mark-text.component";
 import { CategoriesSectionComponent } from "./components/categories-section/categories-section.component";
 import { GadgetSectionComponent } from "./components/gadget-section/gadget-section.component";
 import { ReviewComponent } from "./components/review/review.component";
@@ -10,7 +9,7 @@ import { AboutFooterComponent } from "../../components/about-footer/about-footer
 
 @Component({
   selector: 'app-shop',
-  imports: [NavbarComponent, ShopFilterBarComponent, WaterMarkTextComponent, CategoriesSectionComponent, GadgetSectionComponent, ReviewComponent, FooterComponent, AboutFooterComponent],
+  imports: [NavbarComponent, ShopFilterBarComponent, CategoriesSectionComponent, GadgetSectionComponent, ReviewComponent, FooterComponent, AboutFooterComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })

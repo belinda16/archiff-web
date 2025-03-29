@@ -10,5 +10,5 @@ import { DialogModule } from 'primeng/dialog';
   styleUrl: './verification.component.css'
 })
 export class VerificationComponent {
-
+  visible: boolean = true;
 }

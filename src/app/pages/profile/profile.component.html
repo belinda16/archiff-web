@@ -1,0 +1,112 @@
+<main>
+    <navbar></navbar>
+    <div>
+        <div class="profile-toolbar flex items-center">
+            <button class="back-button flex, items-center justify-center"><img src="/assets/icons/arrow-left.svg" /></button>
+            <div>
+                <h1>Profile</h1>
+                <div class="divider divider-1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <img src="/assets/images/profile.svg" alt="Profile Picture" class="profile-pic">
+            <div class="user-info">
+                <h3>Kacy Bartlett</h3>
+                <p>Kacy.bartlettkacyarts.com</p>
+            </div>
+            <button class="edit-btn">EDIT</button>
+        </div>
+
+        <div class="info-section">
+            <div class="info-box">
+                <label>Full Name</label>
+                <input type="text" value="Kacy Mark Bartlett" disabled>
+            </div>
+            <div class="info-box">
+                <label>Mobile Number</label>
+                <input type="text" value="+233 550038022" disabled>
+            </div>
+            <div class="info-box">
+                <label>Email Address</label>
+                <input type="email" value="Kacy.bartlett@kacyarts.com" disabled>
+            </div>
+            <div class="info-box">
+                <label>Your Address</label>
+                <input type="text" value="Ghana" disabled>
+            </div>
+        </div>
+
+        <div class="billing-address">
+            <p>Billing Address</p>
+                <div class="billing-address-card flex items-center">
+                    <img src="assets/images/visa.svg" alt="Visa Logo">
+                    <div class="billing-personal-info flex flex-column justify-between">
+                        <p>Kacy Mark Bartlett</p>
+                        <p class="billing-personal-card-info">************5673</p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="shipping-address">
+            <p>Shipping Address</p>
+            <div class="shipping-address-card flex items-end justify-between">
+                <div class="flex flex-column shipping-address-info">
+                    <p>Kacy Mark Bartlett</p>
+                    <p>South Liberation Link, Airport City</p>
+                    <p>Accra Ghana, ZIP code: 00233</p>
+                    <p>GK - 0938 - 0930</p>
+                </div>
+                <div class="actions">
+                    <a href="#">Remove</a> | <a href="#">Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider2"></div>
+        <div class="account-activity">
+            <h2>Account Activity</h2>
+        </div>
+        <p-tabs value="0">
+            <p-tablist>
+                <p-tab value="0">Payment Notification</p-tab>
+                <p-tab value="1">My Orders</p-tab>
+                <p-tab value="3">Search History</p-tab>
+                <p-tab value="4">Favourite Items</p-tab>
+                <p-tab value="5">Refunds</p-tab>
+            </p-tablist>
+            <p-tabpanels>
+                <p-tabpanel value="0">
+                    <div class="payment-activity-card flex">
+                        <div class="payment-activity-icon">
+                            <img src="/assets/icons/payment-check-icon.svg" />
+                        </div>
+                        <div class="payment-activity-content">
+                            <h3>Payment Successful</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and 
+                                scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="payment-activity-card flex">
+                        <div class="payment-activity-icon">
+                            <img src="/assets/icons/payment-check-icon.svg" />
+                        </div>
+                        <div class="payment-activity-content">
+                            <h3>Payment Failed</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been the
+                                industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and 
+                                scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                    </div>
+                </p-tabpanel>
+            </p-tabpanels>
+        </p-tabs >
+    </div>
+</main>
