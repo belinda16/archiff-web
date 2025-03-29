@@ -16,6 +16,7 @@
             "outputPath": "dist/archif-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "allowedCommonJsDependencies": ["@primeng/themes/Aura"],
             "polyfills": [
               "zone.js"
             ],
