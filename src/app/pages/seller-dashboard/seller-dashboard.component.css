@@ -4,7 +4,7 @@
 }
 .store-toolbar{
     padding:12px 40px;
-    border-bottom:1px solid rgba(237, 237, 237, 1);
+    border-block:1px solid rgba(237, 237, 237, 1);
 }
 .store-info{
     gap:16px;
