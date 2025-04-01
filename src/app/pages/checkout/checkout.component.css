@@ -1,11 +1,10 @@
 .main{
-    
+    padding:0 40px;
 }
 .checkout-container{
     display:grid;
     grid-template-columns: 5fr 2.5fr;
     gap:16px;
-    padding:0 84px;
 }
 .new-shipping-address{
     padding: 0 24px;
