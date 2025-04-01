@@ -9,16 +9,18 @@
         font-weight: 700;
         margin-bottom: 16px;
     }
-    .card-title{
+    .card-description{
         color: rgba(130, 130, 130, 1);
         font-size: 16px;
         font-weight: 400;
         margin-bottom: 16px;
+        /* white-space: nowrap;
+        overflow: hidden; */
+
     }
     .card-brand-name{
         font-size: 20px;
         margin-bottom: 16px;
-        
         
     }
     .card-price{
@@ -43,7 +45,7 @@
     </div>
     <div >
         <h2 class="card-brand-name">{{product.brandName}}</h2>
-        <p  class="card-title">{{product.description}}</p>
+        <p  class="card-description">{{product.description}}</p>
         <p class="card-price">${{product.price}}+</p>
     </div>
     <div class="flex items-center" style="gap:16px; margin-block:16px;">
@@ -56,12 +58,13 @@
             <span style="color: rgba(156, 156, 156, 1);">Free Gift</span>
         </div>
     </div>
-    <div>
+    <div style="gap:10px" class="flex items-center justify-between">
         <button class="flex items-center justify-center view-deal-button">
             <span>VIEW DEAL</span>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.79527 11.5L0.125 9.8308L7.17647 2.77683H1.87913L1.8931 0.5H11.125V9.73302H8.83276L8.84673 4.44603L1.79527 11.5Z" fill="white"/>
             </svg>
         </button>
+        <ng-content></ng-content>
     </div>
 </div>

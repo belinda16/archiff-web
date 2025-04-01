@@ -11,13 +11,29 @@
     .content{
         padding:0 40px;
     }
+    .gadget-section{
+        position:relative;
+        margin-top: 170px;
+    }
+    .watermark-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top:-16%;
+        width: 100%;
+    }
 </style>
 <main class="main">
     <navbar></navbar>
     <section class="content">
         <shop-filter-bar></shop-filter-bar>
         <categories-section></categories-section>
-        <gadget-section></gadget-section>
+        <div class="gadget-section">
+            <div class="watermark-container">
+                <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIF GADGETS"></water-mark-text>
+            </div>
+            <gadget-section></gadget-section>
+         </div>
         <review></review>
         <app-about-footer></app-about-footer>
         <app-footer></app-footer>

@@ -21,11 +21,11 @@
         color: var(--archif-primary-color);
         border-radius: 24px;
         padding: 10px 24px;
-       
     }
+
 </style>
 <div class="menu">
-    <a routerLink="/" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home </a>
-    <a routerLink="/shop" class="menu-item"  routerLinkActive="active">Buy</a>
-    <a routerLink="/sell" class="menu-item"  routerLinkActive="active">Sell</a>
+    <a (click)="makeLinkActive($event)" routerLink="/" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home </a>
+    <a (click)="makeLinkActive($event)" routerLink="/shop" class="menu-item"  routerLinkActive="active">Buy</a>
+    <a (click)="makeLinkActive($event)" routerLink="/sell" class="menu-item"  routerLinkActive="active">Sell</a>
 </div>

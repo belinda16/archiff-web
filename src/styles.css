@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
 :root{
     --archif-primary-color:#000000;
     --archif-secondary-color:#ffffff;
@@ -65,4 +66,19 @@ button{
 }
 .items-end{
     align-items: end;
+}
+
+ .p-tab{
+    color:rgba(31, 41, 55, 1) !important;
+    font-weight:400;
+} .p-tab-active{
+    color:rgba(9, 9, 9, 1) !important;
+    border-bottom-width: 1px !important;
+    border-color:var(--mhc-primary-color)!important; ;
+}
+.p-tablist-active-bar{
+   background-color: rgba(9, 9, 9, 1) !important;
+}
+.p-tabpanels{
+    padding-inline: 0 !important;
 }

@@ -1,13 +1,7 @@
 <main>
     <navbar></navbar>
-    <div>
-        <div class="profile-toolbar flex items-center">
-            <button class="back-button flex, items-center justify-center"><img src="/assets/icons/arrow-left.svg" /></button>
-            <div>
-                <h1>Profile</h1>
-                <div class="divider divider-1"></div>
-            </div>
-        </div>
+    <div style="margin-top: 20px;">
+        <app-navigation-back-component title="Profile"></app-navigation-back-component>
     </div>
     <div class="container">
         <div class="header">
@@ -49,20 +43,7 @@
             </div>
         </div>
 
-        <div class="shipping-address">
-            <p>Shipping Address</p>
-            <div class="shipping-address-card flex items-end justify-between">
-                <div class="flex flex-column shipping-address-info">
-                    <p>Kacy Mark Bartlett</p>
-                    <p>South Liberation Link, Airport City</p>
-                    <p>Accra Ghana, ZIP code: 00233</p>
-                    <p>GK - 0938 - 0930</p>
-                </div>
-                <div class="actions">
-                    <a href="#">Remove</a> | <a href="#">Edit</a>
-                </div>
-            </div>
-        </div>
+        <shipping-address-card></shipping-address-card>
         <div class="divider divider2"></div>
         <div class="account-activity">
             <h2>Account Activity</h2>

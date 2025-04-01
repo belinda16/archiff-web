@@ -1,0 +1,79 @@
+<style>
+    .filter-bar{
+        border-block:1px solid rgba(237, 237, 237, 1);
+        padding:12px 50px;
+        gap:16px;
+        width:100%;
+    }
+    .search-group{
+        position: relative;
+    }
+    .search-input{
+        border:1px solid rgba(154, 168, 188, 1);
+        padding:10px;
+        padding-inline: 50px 250px;
+        border-radius: 16px;
+    }
+    .search-input:focus{
+        outline: 2px solid var(--archif-primary-color);
+        outline-offset: -2px;
+    }
+    .search-input::placeholder{
+        color:rgba(114, 129, 151, 1);
+    }
+    .search-icon{
+        position: absolute;
+        top:50%;
+        left:15px;
+        transform: translateY(-50%);
+    }
+    .filter-selector-group{
+        position: relative;
+    }
+    .filter-selector-caret{
+        position: absolute;
+        top:50%;
+        right:15px;
+        transform: translateY(-50%);
+    }
+    .filter-group{
+        gap:12px;
+        position: relative;
+        z-index: 20;
+    }
+    .category-filter-group{
+        gap:12px;
+    }
+    .filter-selector{
+        background-color: rgba(9, 9, 9, 1);
+        padding:10px;
+        padding-inline:16px 50px;
+        color:var(--archif-secondary-color);
+        border-radius: 20px;
+    }
+</style>
+<div class="filter-bar flex items-center">
+    <div class="search-group">
+        <input class="search-input" type="text" placeholder="Search..." />
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5306 18.4693L14.8365 13.7762C16.1971 12.1428 16.8755 10.0478 16.7307 7.92691C16.5859 5.80604 15.629 3.82265 14.0591 2.38932C12.4892 0.955989 10.4271 0.183083 8.30188 0.231383C6.17663 0.279683 4.15181 1.14547 2.64864 2.64864C1.14547 4.15181 0.279683 6.17663 0.231383 8.30188C0.183083 10.4271 0.955989 12.4892 2.38932 14.0591C3.82265 15.629 5.80604 16.5859 7.92691 16.7307C10.0478 16.8755 12.1428 16.1971 13.7762 14.8365L18.4693 19.5306C18.539 19.6003 18.6218 19.6556 18.7128 19.6933C18.8038 19.731 18.9014 19.7504 19 19.7504C19.0985 19.7504 19.1961 19.731 19.2871 19.6933C19.3782 19.6556 19.4609 19.6003 19.5306 19.5306C19.6003 19.4609 19.6556 19.3782 19.6933 19.2871C19.731 19.1961 19.7504 19.0985 19.7504 19C19.7504 18.9014 19.731 18.8038 19.6933 18.7128C19.6556 18.6218 19.6003 18.539 19.5306 18.4693ZM1.74997 8.49997C1.74997 7.16495 2.14585 5.8599 2.88755 4.74987C3.62925 3.63984 4.68345 2.77467 5.91686 2.26378C7.15026 1.75289 8.50746 1.61922 9.81683 1.87967C11.1262 2.14012 12.3289 2.78299 13.2729 3.727C14.2169 4.671 14.8598 5.87374 15.1203 7.18311C15.3807 8.49248 15.247 9.84968 14.7362 11.0831C14.2253 12.3165 13.3601 13.3707 12.2501 14.1124C11.14 14.8541 9.83499 15.25 8.49997 15.25C6.71037 15.248 4.99463 14.5362 3.72919 13.2707C2.46375 12.0053 1.75195 10.2896 1.74997 8.49997Z" fill="#728197"/>
+        </svg> 
+    </div>
+    <div class="filter-group flex items-center">
+        <div class="filter-selector-group">
+            <button class="filter-selector">{{categoryLabel}}</button>
+            <svg class="filter-selector-caret" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.25 1.375L6 6.625L0.75 1.375" stroke="#F3F9FB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>   
+        </div>
+        <div class="category-filter-group flex items-center">
+            <filter-button label="Color"></filter-button>
+            <filter-button label="Rating"></filter-button>
+            <filter-button label="Condition"></filter-button>
+            <filter-button label="Size"></filter-button>
+            <filter-button label="Filter"></filter-button>
+            <filter-button label="Filter"></filter-button>
+            <filter-button label="Filter"></filter-button>
+        </div>
+    </div>
+</div>

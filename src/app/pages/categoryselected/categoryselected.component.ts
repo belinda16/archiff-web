@@ -7,10 +7,11 @@ import { AboutFooterComponent } from "../../components/about-footer/about-footer
 import { FooterComponent } from "../../components/footer/footer.component";
 import { NewgadgetComponent } from "./components/newgadget/newgadget.component";
 import { ComputerAccessoriesComponent } from "./components/computer-accessories/computer-accessories.component";
+import { NavigationBackComponentComponent } from "../../components/navigation-back-component/navigation-back-component.component";
 
 @Component({
   selector: 'app-categoryselected',
-  imports: [NavbarComponent, FilterButtonComponent, GadgetSectionComponent, AboutFooterComponent, FooterComponent, NewgadgetComponent, ComputerAccessoriesComponent],
+  imports: [NavbarComponent, FilterButtonComponent, GadgetSectionComponent, AboutFooterComponent, FooterComponent, NewgadgetComponent, ComputerAccessoriesComponent, NavigationBackComponentComponent],
   templateUrl: './categoryselected.component.html',
   styleUrl: './categoryselected.component.css'
 })

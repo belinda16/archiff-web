@@ -1,0 +1,108 @@
+main{
+    padding:0 40px;
+}
+.wrapper{
+    grid-template-columns: 2fr 8fr;
+    margin-top: 40px;
+    align-items: stretch;
+}
+.wrapper, .products-container{
+    display: grid;
+}
+.products-container{
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap:24px;
+}
+.sidebar-header{
+    padding-bottom:24px;
+    border-bottom: 1px solid rgba(228, 231, 233, 1);
+}
+.sidebar-header h1{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.filter-wrapper{
+    width: 100%;
+    background-color: rgba(242, 244, 245, 1);
+    padding:12px 24px;
+    margin-bottom: 16px;
+}
+.filter-list-container{
+    gap:8px;
+}
+.filter-name{
+    color:rgba(25, 28, 31, 1);
+}
+.filter-list{
+    gap:16px;
+}
+.filter-close-button{
+    color: rgba(146, 159, 165, 1);
+}
+.aside-search-group{
+    position: relative;
+}
+.search-icon,.aside-search-icon{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+.aside-search-group{
+    margin-bottom: 24px;
+}
+.aside-search-input{
+    border: 1px solid rgba(228, 231, 233, 1);
+    padding:10px;
+    width:100%;
+    color:rgba(119, 135, 143, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.aside-search-icon{
+    right:15px;
+}
+.aside-seller-card-wrapper{
+    padding-top: 24px;
+    border-top:1px solid rgba(228, 231, 233, 1);
+}
+
+.aside-seller-card{
+    border:1px solid rgba(228, 231, 233, 1);
+    gap:16px;
+    padding:12px;
+    margin-bottom:16px;
+}
+.aside-seller-card-text h2{
+    margin-bottom:10px;
+    color:rgba(25, 28, 31, 1);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+.aside-seller-card-text p{
+    color:rgba(25, 28, 31, 1);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+.choosing-laptop{
+    gap:16px;
+}
+.choosing-laptop h3{
+    font-weight:400;
+    font-size:1rem;
+    line-height:26px;
+    color:rgba(119, 119, 119, 1);
+}
+.choosing-laptop-text{
+    font-weight:700;
+    font-size:40px;
+    line-height:70px;
+}
+.learn-more a{
+    margin-top:28px;
+    color:rgba(26, 183, 108, 1);
+    line-height:100%;
+}

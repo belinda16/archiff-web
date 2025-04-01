@@ -1,24 +1,67 @@
 <main>
     <div>
-        <h1 style="font-size: 40px; font-weight: 400; color:rgba(0, 0, 0, 1);padding-bottom:24px; border-bottom:1px solid rgba(237, 237, 237, 1)">Computer Accessories</h1>
-        <p style="color:rgba(9, 9, 9, 1);font-size: 14px; line-height: 20px;margin-block:36px;">
-            The most powerful MacBook Pro ever is here.
-            With the blazing-fast M1 Pro or M1 Max chip — the 
-            first Apple silicon designed for pros — you get 
-            groundbreaking performance and amazing battery life.
-            Add to that a stunning Liquid Retina XDR display, 
-            the best camera and audio ever in a Mac notebook, 
-            and all the ports you need. The first notebook of
-            its kind, this MacBook Pro is a beast.
-            M1 Pro takes the exceptional performance of the M1
-            architecture to a whole new level for pro users
-        </p>
-        <div class="accessories-container">
-            @for(accessory of accessories; track accessory.brandName){
-                <app-product-card [product]="accessory"></app-product-card>
-            }
-            
+        <div class="container">
+            <div>
+                <h1 style="font-size: 40px; font-weight: 400; color:rgba(0, 0, 0, 1);padding-bottom:24px; border-bottom:1px solid rgba(237, 237, 237, 1)">Computer Accessories</h1>
+                <p style="color:rgba(9, 9, 9, 1);font-size: 14px; line-height: 20px;margin-block:36px;">
+                    The most powerful MacBook Pro ever is here.
+                    With the blazing-fast M1 Pro or M1 Max chip — the 
+                    first Apple silicon designed for pros — you get 
+                    groundbreaking performance and amazing battery life.
+                    Add to that a stunning Liquid Retina XDR display, 
+                    the best camera and audio ever in a Mac notebook, 
+                    and all the ports you need. The first notebook of
+                    its kind, this MacBook Pro is a beast.
+                    M1 Pro takes the exceptional performance of the M1
+                    architecture to a whole new level for pro users
+                </p>
+                <div class="accessories-container">
+                    @for(accessory of accessories; track accessory.brandName){
+                        <app-product-card [product]="accessory"></app-product-card>
+                    }
+                </div>
+            </div>
+            <div class="flex flex-column ads-wrapper">
+                <div class="ad-container flex flex-column items-center">
+                    <img class="product-image" src="/assets/images/xiaomi-true-buds.svg" alt="Xiaomi Earbuds">
+                    <h2>Xiaomi True</h2>
+                    <h2>Wireless Earbuds</h2>
+                    <p>Escape the noise, It's time to hear the magic with Xiaomi Earbuds.</p>
+                    <div class="price-container flex items-center justify-center">
+                      <span class="price-text">Only for:</span>
+                      <div class="price-value">$299 USD</div>
+                    </div>
+                    <div style="width: 100%;">
+                        <shop-button [customStyle]="{width:'100%',justifyContent:'center'}" label="SHOP NOW"></shop-button>
+                    </div>
+                </div>
+                <div class="summer-sales-container flex flex-column items-center">
+                    <div class="summer-sales-text">SUMMER SALES</div>
+                    <div class="summer-sales-discount-text">37% DISCOUNT</div>
+                    <div class="summer-sales-product-text">only for SmartPhone product.</div>
+                    <div style="width: 100%;">
+                        <shop-button [customStyle]="{width:'100%',justifyContent:'center'}" label="SHOP NOW"></shop-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <button class="show-more-button">Show More</button>
         </div>
     </div>
-    
+    <div class="banner flex justify-between">
+        <div class="banner-text flex flex-column">
+            <div class="banner-discount">SAVE UP TO $200.00</div>
+            <h2>Macbook Pro</h2>
+            <div class="banner-gadget-spec">
+                <p>Apple M1 Max Chip. 32GB Unified </p>
+                <p>Memory, 1TB SSD Storage</p>
+            </div>
+            <a routerLink="/product-details"><shop-button label="SHOP NOW"></shop-button></a> 
+        </div>
+        <div class="banner-image-container">
+            <div class="banner-image-price flex justify-center items-center">$1999</div>
+            <img src="/assets/images/mac-book-pro.svg" alt="an apple mac book pro" />
+        </div>
+    </div>
 </main>

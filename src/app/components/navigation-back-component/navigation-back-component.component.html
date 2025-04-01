@@ -1,0 +1,27 @@
+<style>
+    .nav-back-bar{
+        gap:16px;
+        padding-left:60px;
+        margin-block: 54px;
+        
+    }
+    .back-button{
+        height:54px;
+        width: 54px;
+        border-radius: 50%;
+        border:1px solid rgba(107, 114, 128, 1);
+    }
+    .divider{
+        background: linear-gradient(90deg, #F3F0EC 0%, rgba(255, 255, 255, 0) 100%);
+        height: 54px;
+    }
+</style>
+<div class="nav-back-bar flex items-center">
+    <button (click)="goBack()" class="back-button flex items-center justify-center"><img src="/assets/icons/arrow-left.svg" /></button>
+    <div style="flex-grow:1">
+        <h1 [style]="customStyles">{{title}}</h1>
+        @if(showDivider){
+             <div class="divider divider-1"></div>
+        }
+    </div>
+</div>

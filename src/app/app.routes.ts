@@ -12,6 +12,9 @@ import { OffersComponent } from './pages/offers/offers.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CategoriesSectionComponent } from './pages/shop/components/categories-section/categories-section.component';
 import { CategoryselectedComponent } from './pages/categoryselected/categoryselected.component';
+import { FilteredProductPageComponent } from './pages/filtered-product/filtered-product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 export const routes: Routes = [
     {path:'', component:HomeComponent, pathMatch: 'full' },
@@ -30,5 +33,8 @@ export const routes: Routes = [
     { path:'verify',component:VerificationComponent},
     { path:'verified',component:VerifiedComponent},
     { path:'profile',component:ProfileComponent},
-    { path:'shop/:category',component:CategoryselectedComponent}
+    { path:'shop/:category',component:CategoryselectedComponent},
+    { path:'filtered-product',component:FilteredProductPageComponent},
+    { path:'product-details',component:ProductDetailsComponent},
+    { path:'checkout',component:CheckoutComponent}
 ];

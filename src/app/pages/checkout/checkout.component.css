@@ -1,0 +1,129 @@
+.main{
+    
+}
+.checkout-container{
+    display:grid;
+    grid-template-columns: 5fr 2.5fr;
+    gap:16px;
+    padding:0 84px;
+}
+.new-shipping-address{
+    padding: 0 24px;
+}
+.shipping-address-form{
+    gap:24px;
+}
+.shipping-address-form > div{
+    gap:16px;
+}
+.shipping-address-form input,.shipping-address-form select{
+    padding:12px 16px;
+    width: 100%;
+    display: block;
+}
+input::placeholder, select::placeholder{
+    color:rgba(119, 135, 143, 1);
+}
+input,select{
+    border:1px solid rgba(228, 231, 233, 1);
+}
+label{
+    color: rgba(25, 28, 31, 1);
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom:8px;
+    display: block;
+}
+h2{
+    color:rgba(25, 28, 31, 1);
+    font-size: 18px;;
+    font-weight: 400;
+    line-height: 24px;
+}
+.payment-options-container h2{
+    padding:24px 0;
+}
+.payment-options{
+    padding: 16px 0;
+    border-bottom:1px solid rgba(228, 231, 233, 1);
+}
+.payment-option{
+    gap: 12px;
+    flex-grow: 1;
+    padding:16px 0;
+    border-right: 1px solid rgba(228, 231, 233, 1);
+}
+textarea::placeholder{
+    color:rgba(71, 81, 86, 1);
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 14;
+     
+}
+.card {
+    background: white;
+    padding:24px;
+    border:1px solid  rgba(228, 231, 233, 1);;
+}
+.card h2 {
+    margin-bottom: 15px;
+    color: rgba(25, 28, 31, 1);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.item div p{
+    color:rgba(25, 28, 31, 1);
+    font-size: 14px;
+}
+.item div:last-child{
+    color: style="color:rgba(95, 108, 114, 1);font-size: 14px;";
+} 
+.item div p span{
+    color:rgba(45, 165, 243, 1);
+}
+.item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.price {
+    color: rgba(45, 165, 243, 1);
+    font-weight: 700;
+    font-size: 20px;
+}
+.summary {
+    border-top:1px solid  rgba(228, 231, 233, 1);
+    padding-top: 16px;
+}
+.summary div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: rgba(95, 108, 114, 1);
+    font-size: 14px;
+}
+.total {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.total span{
+    line-height: 24px;
+}
+.order-btn {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 24px;
+    gap:16px;
+}
