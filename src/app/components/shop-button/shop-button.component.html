@@ -9,12 +9,14 @@
          color: white;
     }
 </style>
-<button [style]="customStyle" class="gagdet-shop-button flex items-center">
-    <span>{{label}}</span>
-    <span>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.8761 12.8076H20.3761" [attr.stroke]="iconColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13.6261 6.05762L20.3761 12.8076L13.6261 19.5576" [attr.stroke]="iconColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </span>
-</button>
+<a routerLink="/product-details">
+    <button [style]="customStyle" class="gagdet-shop-button flex items-center">
+        <span>{{label}}</span>
+        <span>
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.8761 12.8076H20.3761" [attr.stroke]="iconColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.6261 6.05762L20.3761 12.8076L13.6261 19.5576" [attr.stroke]="iconColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+    </button>
+</a>
