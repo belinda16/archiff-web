@@ -81,7 +81,7 @@ input {
     color:rgba(0, 0, 0, 1)
 }
 .billing-personal-card-info{
-    font-size: 36px;
+    font-size: clamp(24px,3.5vw,36px);
     font-weight: 400;
     color:rgba(0, 0, 0, 1)
 }
@@ -153,4 +153,45 @@ input {
 }
 .payment-activity-card:last-child{
     background-color: rgba(255, 243, 237, 1);
+}
+@media  screen and (max-width: 700px) {
+    main{
+        padding:0 16px;
+    }
+    .container{
+        padding:0px;
+    }
+    .header{
+        display: block;
+    }
+    .edit-btn{
+        width:100%;
+        margin-top: 24px;
+        padding-block: 16px;
+    }
+    .info-section {
+        display: block;
+        width: 100%;
+    }
+    .info-box{
+        margin-top: 36px;
+        width: 100%;
+    }
+    .billing-address-card,.shipping-address-card{
+        max-width: 100%;
+    }
+    .billing-address,.shipping-address{
+        padding-inline: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+  
+    .divider2{
+        margin-block:30px 30px;
+    }
+    .account-activity-tab{
+        max-width: 100%;
+        width: 100%;
+        overflow-x: auto;
+    }
 }

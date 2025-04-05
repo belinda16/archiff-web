@@ -1,20 +1,14 @@
 main{
-    padding:0 40px;
-    
-    width:100%;
+    padding:0 20px;
 }
 .wrapper{
-    grid-template-columns: 2fr 8fr;
     margin-top: 40px;
-    align-items: stretch;
+    display:block;
     max-width: 100%;
+    width: 100%;
 }
 .wrapper, .products-container{
-    display: grid;
-}
-.products-container{
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-    gap:24px;
+    display: block;
 }
 .sidebar-header{
     padding-bottom:24px;
@@ -26,15 +20,22 @@ main{
     line-height: 24px;
 }
 .filter-wrapper{
-    max-width: 100%;
+   max-width: 100%;
     background-color: rgba(242, 244, 245, 1);
     padding:12px 24px;
     margin-bottom: 16px;
+    font-size: 12px;
     flex-wrap: wrap;
+    width: 100%;
 }
 .filter-list-container{
     gap:8px;
+    flex-wrap: wrap;
 }
+.filter-list-container  span,.results-text{
+    white-space: nowrap;
+}
+
 .filter-name{
     color:rgba(25, 28, 31, 1);
 }
@@ -166,12 +167,19 @@ main{
     font-weight: 700;
   
   }
-  .filter-bar{
-    max-width:100%;
-  }
 
-  @media screen and (max-width:700px) {
-    main{
-        padding:0 8px;
+  @media screen and (min-width:700px) {
+    .wrapper{
+        display:none;
+        padding:0 20px;
     }
   }
+::ng-deep .p-tab-active{
+    color:rgba(9, 9, 9, 1) !important;
+    border-bottom-width: 3px !important;
+    border-color:var(--mhc-primary-color)!important; ;
+}
+::ng-deep .p-tab{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}

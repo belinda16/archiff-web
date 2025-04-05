@@ -22,15 +22,28 @@
         top:-16%;
         width: 100%;
     }
+    @media screen and (max-width:700px) {
+        .watermark-container {
+            top:-5%;
+        }
+        .content{
+            padding:0 10px;
+        }
+        .gadget-section{
+            margin-top:80px;
+        }
+    }
 </style>
 <main class="main">
     <navbar></navbar>
     <section class="content">
-        <shop-filter-bar></shop-filter-bar>
+        <div style="margin-top: 60px;">
+            <shop-filter-bar></shop-filter-bar>
+        </div>
         <categories-section></categories-section>
         <div class="gadget-section">
             <div class="watermark-container">
-                <water-mark-text [customStyle]="{fontSize:'180px'}" label="ARCHIF GADGETS"></water-mark-text>
+                <water-mark-text label="ARCHIF GADGETS"></water-mark-text>
             </div>
             <gadget-section></gadget-section>
          </div>

@@ -5,10 +5,12 @@
     </div>
     <div class="container">
         <div class="header">
-            <img src="/assets/images/profile.svg" alt="Profile Picture" class="profile-pic">
-            <div class="user-info">
-                <h3>Kacy Bartlett</h3>
-                <p>Kacy.bartlettkacyarts.com</p>
+            <div class="flex items-center profile-header" style="gap:16px;">
+                <img src="/assets/images/profile.svg" alt="Profile Picture" class="profile-pic">
+                <div class="user-info">
+                    <h3>Kacy Bartlett</h3>
+                    <p>Kacy.bartlettkacyarts.com</p>
+                </div>
             </div>
             <button class="edit-btn">EDIT</button>
         </div>
@@ -48,46 +50,48 @@
         <div class="account-activity">
             <h2>Account Activity</h2>
         </div>
-        <p-tabs value="0">
-            <p-tablist>
-                <p-tab value="0">Payment Notification</p-tab>
-                <p-tab value="1">My Orders</p-tab>
-                <p-tab value="3">Search History</p-tab>
-                <p-tab value="4">Favourite Items</p-tab>
-                <p-tab value="5">Refunds</p-tab>
-            </p-tablist>
-            <p-tabpanels>
-                <p-tabpanel value="0">
-                    <div class="payment-activity-card flex">
-                        <div class="payment-activity-icon">
-                            <img src="/assets/icons/payment-check-icon.svg" />
+        <div class="account-activity-tab">
+            <p-tabs value="0">
+                <p-tablist>
+                    <p-tab value="0">Payment Notification</p-tab>
+                    <p-tab value="1">My Orders</p-tab>
+                    <p-tab value="3">Search History</p-tab>
+                    <p-tab value="4">Favourite Items</p-tab>
+                    <p-tab value="5">Refunds</p-tab>
+                </p-tablist>
+                <p-tabpanels>
+                    <p-tabpanel value="0">
+                        <div class="payment-activity-card flex">
+                            <div class="payment-activity-icon">
+                                <img src="/assets/icons/payment-check-icon.svg" />
+                            </div>
+                            <div class="payment-activity-content">
+                                <h3>Payment Successful</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing 
+                                    and typesetting industry. Lorem Ipsum has been the
+                                    industry's standard dummy text ever since the 1500s,
+                                    when an unknown printer took a galley of type and 
+                                    scrambled it to make a type specimen book. 
+                                </p>
+                            </div>
                         </div>
-                        <div class="payment-activity-content">
-                            <h3>Payment Successful</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing 
-                                and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and 
-                                scrambled it to make a type specimen book. 
-                            </p>
+                        <div class="payment-activity-card flex">
+                            <div class="payment-activity-icon">
+                                <img src="/assets/icons/payment-check-icon.svg" />
+                            </div>
+                            <div class="payment-activity-content">
+                                <h3>Payment Failed</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing 
+                                    and typesetting industry. Lorem Ipsum has been the
+                                    industry's standard dummy text ever since the 1500s,
+                                    when an unknown printer took a galley of type and 
+                                    scrambled it to make a type specimen book. 
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="payment-activity-card flex">
-                        <div class="payment-activity-icon">
-                            <img src="/assets/icons/payment-check-icon.svg" />
-                        </div>
-                        <div class="payment-activity-content">
-                            <h3>Payment Failed</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing 
-                                and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and 
-                                scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                    </div>
-                </p-tabpanel>
-            </p-tabpanels>
-        </p-tabs >
+                    </p-tabpanel>
+                </p-tabpanels>
+            </p-tabs >
+        </div>
     </div>
 </main>

@@ -29,12 +29,22 @@
   .p-button-danger {
     color: red;
   }
+  .offer-info-header{
+      text-align: start;
+      font-size: clamp(20px,5vw,48px);
+      font-weight: 400;
+      color:rgba(40, 40, 45, 1);
+      margin-bottom:24px;
+  }
+  @media screen and (max-width:700px) {
+    th,td{
+      font-size: 14px;
+    }
+  }
 </style>
 <div>
-    <h1 class="dashboard-info-header">Offers</h1>
-
+    <h1 class="offer-info-header">Offers</h1>
 <div class="offer-table-container">
-   
     <p-table [value]="offers" class="custom-table">
     <ng-template pTemplate="header">
         <tr>

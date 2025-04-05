@@ -75,7 +75,7 @@ export const categories = [
 
 export const electronicProducts = [
     {
-        id:1,
+    id:1,
       altText:'An apple macbook',
       brandName:'Apple',
       description:'2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, ',

@@ -1,7 +1,7 @@
 .main {
     height: 100%;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
   }
   #background-video {
     width: 100vw;
@@ -38,9 +38,10 @@
       
   }
   .archif-info{
-      grid-column: 1/4;
+      grid-column: 1/8;
       grid-row: 7/8;
       padding: 0 40px;
+      width: 100%;
   }
   .sweet-pastries-title{
       font-size: 3.5rem;
@@ -50,9 +51,10 @@
       margin-bottom:20px;
   }
   .sweet-pastries-subtitle{
-      font-weight: 1rem;
+      font-size: 1rem;
       font-weight: 400;
       line-height: 100%;
+      width:100%;
   }
   
   .discover-cta{
@@ -61,9 +63,20 @@
       left:50%;
       transform: translateX(-50%);
       background-color: rgba(255, 255, 255, 1);
-      padding:8px 18px;
+      padding:8px 14px;
       border-radius: 80px;
       font-size: 1rem;
       color:rgba(75, 85, 99, 1);
       cursor: pointer;
+  }
+  @media screen and (max-width:700px) {
+    .discover-cta{
+        width:70%;
+        margin:0 auto;
+        margin-bottom: 0px;
+        padding-inline: 0;
+    }
+    .archif-info{
+        grid-row: 6/8;
+    }
   }

@@ -12,7 +12,7 @@ import { CategoryFilterBarComponent } from "../../components/category-filter-bar
 
 @Component({
   selector: 'app-categoryselected',
-  imports: [NavbarComponent, FilterButtonComponent, GadgetSectionComponent, AboutFooterComponent, FooterComponent, NewgadgetComponent, ComputerAccessoriesComponent, NavigationBackComponentComponent, CategoryFilterBarComponent],
+  imports: [NavbarComponent, GadgetSectionComponent, AboutFooterComponent, FooterComponent, NewgadgetComponent, ComputerAccessoriesComponent, NavigationBackComponentComponent, CategoryFilterBarComponent],
   templateUrl: './categoryselected.component.html',
   styleUrl: './categoryselected.component.css'
 })

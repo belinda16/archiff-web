@@ -2,6 +2,7 @@ main{
     height: 100%;
     background-color: var(--archiff-secondary-color);
     position: relative;
+     overflow-x: hidden;
 }
 .watermark-container {
     position: absolute;
@@ -9,13 +10,13 @@ main{
     transform: translateX(-50%);
 }
 .watermark-container:nth-of-type(1){
-    top:15%;
+    top:60%;
 }
 .watermark-container:nth-of-type(2) {
-    top:43%;
+    top:70%;
 }
 .watermark-container:nth-of-type(3) {
-    top:70%;
+    top:80%;
 }
 .modal {
     box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
@@ -28,6 +29,8 @@ main{
     background: white;
     padding: 32px 195px 48px;
     text-align: center;
+    max-width:500px;
+    width: 100%;
 }
 .modal h2 {
     margin-bottom: 16px;
@@ -58,6 +61,9 @@ input {
     color:rgba(71, 81, 86, 1);
     font-weight: 400;
 }
+input,.verify-btn{
+    width:100%;
+}
 .verify-btn  {
     width: 100%;
     padding: 12px;
@@ -74,4 +80,11 @@ input {
 }
 .footer{
     padding-inline:40px;
+}
+
+@media screen and (max-width: 768px) {
+    .modal {
+        box-shadow: none;
+        padding-inline: 16px;
+    }
 }

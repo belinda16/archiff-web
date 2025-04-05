@@ -23,3 +23,22 @@ main{
     font-size: 14px;
     font-weight: 700;
 }
+
+@media screen and (max-width:700px) {
+    main{
+        display: block;
+        margin:0
+    }
+    .card{
+        margin-top: 24px;
+        padding-block: 16px ;
+        flex-direction: column-reverse;
+        border-radius: 8px;
+    }
+    .card-text-container{
+        margin-top:36px;
+    }
+    .card-2-image{
+        padding-bottom: 36px;
+    }
+}

@@ -32,10 +32,22 @@
         margin-bottom:64px;
         background-color:rgba(237, 237, 237, 1);
     }
+    @media screen and (max-width:700px) {
+        .watermark-container {
+            top:-1.8%;
+        }
+        .main{
+            margin-top: 80px;
+        }
+        .show-more-button-container{
+            padding:34px 0;
+        }
+    }
+    
 </style>
 <section class="main">
     <div class="watermark-container">
-        <water-mark-text [customStyle]="{fontSize:'180px'}" label="CATEGORIES"></water-mark-text>
+        <water-mark-text [customStyle]="{fontSize:'65px'}" label="CATEGORIES"></water-mark-text>
     </div>
     <div class="card-container">
         @for(card of data;track card.category){

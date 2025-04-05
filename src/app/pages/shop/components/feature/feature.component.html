@@ -1,7 +1,6 @@
 <style>
     .feature {
         gap:16px;
-        flex-grow: 1;
         padding:16px;
         border-left:1px solid rgba(228, 231, 233, 1);
     }
@@ -21,6 +20,14 @@
     }
     .title,.subtitle{
         font-size: 14px;
+    }
+    @media screen and (max-width:700px) {
+        .feature{
+            border:0;
+            border-bottom:1px solid rgba(228, 231, 233, 1) !important;
+            width:100%;
+            align-items:center;
+        }
     }
 </style>
 <div class="feature flex items-center" [style]="customStyle">

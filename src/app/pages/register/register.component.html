@@ -1,16 +1,11 @@
-<style>
-    
-</style>
-<div style="height: 100%;" class="flex flex-column">
+<div style="min-height: 100%;position: relative;">
     <app-header></app-header>
     <div class="container">
         <div style="padding:24px">
             <div class="login-background-image-container">
-                <div class="login-background-image-container">
-                    <video preload="auto" id="login-background-video" autoplay muted loop playsinline>
-                        <source src="/assets/videos/archif-bg.mp4" type="video/mp4">
-                      </video>
-                </div>
+                <video preload="auto" id="login-background-video" autoplay muted loop playsinline>
+                    <source src="/assets/videos/archif-bg.mp4" type="video/mp4">
+                    </video>
             </div>
         </div>
         <div class="login-form-container flex justify-center items-center flex-column">
@@ -46,8 +41,9 @@
                 </div>  
             </div>
         </div>
+       
     </div>
-    <div style="padding-inline:24px">
+    <div style="padding-inline:24px" class="footer-container">
         <app-footer></app-footer>
     </div>
 </div>

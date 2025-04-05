@@ -1,6 +1,8 @@
 <main class="main">
     <navbar></navbar>
-    <category-filter-bar [categoryLabel]="categoryName"></category-filter-bar>
+    <div>
+        <category-filter-bar [categoryLabel]="categoryName"></category-filter-bar>
+    </div>
     <section style="padding:0 48px;">
         <div>
             <app-navigation-back-component [customStyles]="{fontSize:'48px',fontWeight:400,borderBottom:'1px solid rgba(209, 213, 219, 1)'}" [showDivider]="false" [title]="categoryName"></app-navigation-back-component>

@@ -3,7 +3,7 @@
         border-block:1px solid rgba(237, 237, 237, 1);
         padding:12px 50px;
         gap:16px;
-        width:100%;
+        flex-grow: 1;
     }
     .search-group{
         position: relative;
@@ -50,6 +50,23 @@
         padding-inline:16px 50px;
         color:var(--archif-secondary-color);
         border-radius: 20px;
+    }
+    @media screen and (max-width:700px) {
+        .filter-bar{
+            margin-top:80px;
+            padding-inline:0px;
+            width:100%;
+        }
+        .category-filter-group{
+            display: none;
+        }
+        .search-group{
+            flex:3
+        }
+        .search-input{
+            padding-inline:40px!important;
+            width:100%;
+        }
     }
 </style>
 <div class="filter-bar flex items-center">

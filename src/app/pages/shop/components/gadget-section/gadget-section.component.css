@@ -10,26 +10,19 @@
     z-index: 10;
 }
 
-@media screen and (min-width:1300px) {
-    .grid-container{
-        display: grid;
-        grid-template-columns: 4fr minmax(400px,2fr);
-        gap:24px;
-    }
-    .medium-gadget-card-container{
-        flex-direction: column;
-    }
-    .big-gagdet-card{
-        margin-bottom:0;
-    }
+.xbox-one{
+    width:100%;
+    max-width:100%;
 }
+
+
 .big-gagdet-card{
     background-color: rgba(242, 244, 245, 1);
-    padding:70px;
+    padding:30px;
     border-radius: 16px;
     position: relative;
     margin-bottom:16px;
-
+    height:100%;
 }
 .gagdet-shop-button{
     background-color:var(--archif-primary-color);
@@ -54,7 +47,7 @@
 .gadget-title{
     margin-top:16px;
     text-align: left;
-    font-size: 48px;
+    font-size: 24px;
     font-family: 'heliosrounded';
     color: rgba(25, 28, 31, 1);
     font-weight: 400;
@@ -69,12 +62,13 @@
     font-family: 'Helvetica';
 }
 .medium-gadget-card-container{
-    gap:24px;
+    gap:16px;
+    height:100%;
 }
 .medium-gadget-card{
     color:white;
     background-color: rgba(25, 28, 31, 1);
-    padding:40px; 
+    padding:40px 16px;
     border-radius: 16px;
     text-align: left;
     overflow-y: hidden;
@@ -86,6 +80,8 @@
     background-color: rgba(242, 244, 245, 1);
     gap:24px;
     color:rgba(25, 28, 31, 1);
+    padding-inline:8px;
+    gap:16px;
 }
 .medium-gadget-card-title h2{
     font-size: 14px;
@@ -101,6 +97,11 @@
     position:absolute;
     top:20%;
     right: 0;
+    text-align:right;
+}
+.medium-card-image img{
+    max-width:90%;
+    width:100%;
 }
 .gadget-price{
     position: absolute;
@@ -109,17 +110,63 @@
     background-color: rgba(9, 9, 9, 1);
     color:white;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    font-size:24px;
-    font-weight: 600;
+    height: 50px;
+    width: 50px;
+    font-size:16px;
+    font-weight: 400;
     line-height: 100px;
 }
 .features-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap:24px;
     padding:24px;
+    justify-content:center;
     border:1px solid rgba(228, 231, 233, 1);
+    grid-template-columns:1fr;
     margin-top:28px;
+}
+@media screen and (min-width:1300px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 4fr minmax(400px,2fr);
+        gap:24px;
+    }
+    .gadget-price{
+        height: 100px;
+        width: 100px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .medium-gadget-card-container{
+        flex-direction: column;
+    }
+    .big-gagdet-card{
+        margin-bottom:0;
+        padding:70px;
+    }
+    .xbox-one{
+        max-width:100%;
+        width:100%;
+        height:100%;
+    }
+    .medium-gadget-card{
+        padding-inline:40px; 
+    }
+    
+    .features-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap:24px;
+        padding:24px;
+        border:1px solid rgba(228, 231, 233, 1);
+        margin-top:28px;
+    }
+    .gadget-title{
+        font-size:48px;
+    }
+    .medium-card-image img{
+        max-width:100%;
+        width:100%;
+    }
+    
 }
