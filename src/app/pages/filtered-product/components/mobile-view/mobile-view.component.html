@@ -71,14 +71,16 @@
                     <main style="padding:0 10px;">
                         <div class="products-container">
                             @for(product of products.slice(0,5); track product.id){
-                                <app-product-card [product]="product">
-                                    <button 
-                                        class="flex items-center justify-center"
-                                        style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
-                                        flex-shrink:0;">
-                                        <img src="/assets/icons/heart-icon.svg" alt="" />
-                                </button>
-                                </app-product-card>
+                                <div style="margin-bottom: 16px;">
+                                    <app-product-card [product]="product">
+                                        <button 
+                                            class="flex items-center justify-center"
+                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
+                                            flex-shrink:0;">
+                                            <img src="/assets/icons/heart-icon.svg" alt="" />
+                                    </button>
+                                    </app-product-card>
+                                </div>
                             }
                             <div class="flex flex-column justify-center items-center choosing-laptop">
                                 <h3 >PRO TIP</h3>
@@ -94,14 +96,16 @@
                         </div>
                         <div class="products-container" style="margin-top:24px;">
                             @for(product of products.slice(5); track product.id){
-                                <app-product-card [product]="product">
-                                    <button 
-                                        class="flex items-center justify-center"
-                                        style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
-                                        flex-shrink:0;">
-                                        <img src="/assets/icons/heart-icon.svg" alt="" />
-                                </button>
-                                </app-product-card>
+                                <div style="margin-bottom: 16px;">
+                                    <app-product-card [product]="product">
+                                        <button 
+                                            class="flex items-center justify-center"
+                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
+                                            flex-shrink:0;">
+                                            <img src="/assets/icons/heart-icon.svg" alt="" />
+                                    </button>
+                                    </app-product-card>
+                                </div>  
                             }
                         </div>
                     </main>
