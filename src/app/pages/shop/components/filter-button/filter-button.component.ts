@@ -11,7 +11,6 @@ export class FilterButtonComponent {
   @Input() label = "";
   constructor(private router:Router){}
   navigate(){
-    console.log("navigate");
     this.router.navigate(["shop",this.label.toLowerCase()]);
   }
 }
