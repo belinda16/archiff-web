@@ -1,0 +1,42 @@
+<main>
+    <div style="height: 100%;">
+        <app-header></app-header>
+        <div class="hidden lg:block">
+            <div class="watermark-container first-water-mark">
+                <water-mark-text  label="ARCHIFF"></water-mark-text>
+            </div>
+            <div class="watermark-container">
+                <water-mark-text  label="ARCHIFF"></water-mark-text>
+            </div>
+            <div class="watermark-container">
+                <water-mark-text label="ARCHIFF"></water-mark-text>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="px-[0px] lg:!px-[70px]">
+            <h2>Enter Your Seller Code</h2>
+            <p>Use your unique ID to access your dashboard</p>
+            <div class="input-group">
+                <input type="text" id="code" />
+            </div>
+            <a routerLink="/seller">
+                <button  class="verify-btn flex items-center justify-center">
+                    VERIFY ME
+                    <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                </button>
+            </a>
+            <p class="text-[rgba(95, 108, 114, 1)] my-[24px] text-center">Don't have a code? 
+                <a class=" underline" href="/">Start onboarding to request one</a>
+            </p>
+            <div class="flex items-center justify-center gap-[35px] text-[14px]">
+                <a href="text-black">Call Us Now</a>
+                <a href="text-black">Send Us An Email</a>
+            </div>
+        </div>
+    </div>  
+
+    <div class="footer">
+        <app-footer></app-footer>
+    </div> 
+</main>

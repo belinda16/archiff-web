@@ -3,8 +3,19 @@
         background-color: rgba(243, 249, 251, 1);
         border-radius: 20px;
         color: rgba(34, 34, 34, 1);
-        padding:10px 16px;
+        padding-inline:16px 30px;
+        text-align: start;
     }
-
+    .filter-selector-caret{
+        position: absolute;
+        top:50%;
+        right:10px;
+        transform: translateY(-50%);
+    }
 </style>
-<button (click)="navigate()">{{label}}</button>
+<button class="relative py-[6px] text-[12px] lg:py-[10px] border border-[#C3C3C3] lg:border-0 " (click)="navigate()">
+    {{label}}
+    <svg class="filter-selector-caret" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.25 1.375L6 6.625L0.75 1.375" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>

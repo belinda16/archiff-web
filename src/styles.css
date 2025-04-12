@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+@import "tailwindcss";
 :root{
     --archif-primary-color:#000000;
     --archif-secondary-color:#ffffff;
@@ -26,18 +26,20 @@ body{
     font-family:"Helvetica Neue", sans-serif;
     overflow-x: hidden;
 }
-*,*::before,*::after{
+/* *,*::before,*::after{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-}
-a{
+} */
+/* a{
     text-decoration: none;
+} */
+input:focus{
+    outline-color: #000000;
 }
 button{
     background-color: transparent;
-    border:0;
     cursor: pointer;
 }
 .flex{
@@ -85,3 +87,4 @@ button{
 .p-tabpanels{
     padding-inline: 0 !important;
 }
+

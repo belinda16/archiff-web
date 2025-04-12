@@ -1,4 +1,4 @@
-.container{
+.login-container{
     display: grid;
     grid-template-columns: 5fr 3fr;
     width: 100%;
@@ -20,9 +20,12 @@
     border-radius:24px;
 }
 .login-form-container{
-    padding:0 120px;
+    max-width:450px;
+    margin-inline: auto;
+    width: 100%;
     margin-bottom:140px;
     height:100%;
+    padding-right: 24px;
 }
 h2 {
     font-size: 32px;
@@ -106,7 +109,7 @@ input:focus{
     line-height: 20px;
 }
 @media screen and (max-width: 700px) {
-    .container{
+    .login-container{
         display:block;
         padding: 0 8px;
     }
@@ -118,6 +121,7 @@ input:focus{
         padding:0 16px;
         height:fit-content;
         justify-content:start;
+        max-width: 100%;
     }
     h2 {
         font-size: 24px;

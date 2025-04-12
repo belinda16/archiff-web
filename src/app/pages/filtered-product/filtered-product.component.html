@@ -3,6 +3,14 @@
     <div class="filter-bar flex items-center">
         <category-filter-bar [categoryLabel]="categoryLabel"></category-filter-bar>
     </div>
+    <div>
+        <div class="flex justify-start mt-4 gap-2 items-center lg:!hidden">
+            <filter-button label="Color"></filter-button>
+            <filter-button label="Rating"></filter-button>
+            <filter-button label="Condition"></filter-button>
+            <filter-button label="Size"></filter-button>
+        </div>
+    </div>
     <filter-product-mobile-view [products]="products"></filter-product-mobile-view>
     <filter-product-desktop-view [products]="products"></filter-product-desktop-view>
     <app-about-footer></app-about-footer>

@@ -1,14 +1,18 @@
 main{
-    padding:0 20px;
+    padding:0 12px;
+    max-width: 100%;
 }
 .wrapper{
-    margin-top: 40px;
     display:block;
     max-width: 100%;
     width: 100%;
 }
-.wrapper, .products-container{
-    display: block;
+.products-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:8px;
+    max-width: 100%;
+    width: 100%;
 }
 .sidebar-header{
     padding-bottom:24px;
@@ -27,10 +31,12 @@ main{
     font-size: 12px;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 100%;
 }
 .filter-list-container{
     gap:8px;
     flex-wrap: wrap;
+   
 }
 .filter-list-container  span,.results-text{
     white-space: nowrap;

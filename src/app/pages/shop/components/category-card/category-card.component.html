@@ -4,6 +4,7 @@
         border-radius: 24px;
         padding:24px 16px;
         background-color: var(--archif-secondary-color);
+        max-width: 100%;
     }
     .card-heading{
         gap:6px;
@@ -33,6 +34,19 @@
         line-height: 100%;
         letter-spacing: 4%;
     }
+    @media screen and (max-width:700px) {
+        .card-image-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .card-image{
+            height: auto; 
+            object-fit: contain;
+        }
+        .card-image:nth-child(2){
+            transform: scale(1.4);
+        }
+    }
 </style>
 <div class="card">
     <div class="flex items-center card-heading">
@@ -46,9 +60,9 @@
     <div class="card-title">
         <h2>{{heading}}</h2>
     </div>
-    <div class="card-image-grid flex items-center">
+    <div class="card-image-grid max-w-[100%] flex items-center">
         @for(url of images; track url){
-            <img [src]="url" alt="" class="card-image"/>
+            <img [src]="url" alt=""  class=" flex-shrink block card-image max-w-[100%]"/>
         }
     </div>
     <div>

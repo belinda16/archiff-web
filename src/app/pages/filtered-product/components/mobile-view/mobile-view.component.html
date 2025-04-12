@@ -1,4 +1,4 @@
-<section class="wrapper">
+<section class="wrapper mt-[20px] lg:mt-[40px]">
     <div>
         <div class="flex items-center justify-between filter-wrapper">
             <div class="flex items-center filter-list-container">
@@ -13,11 +13,55 @@
 
         <p-tabs value="0">
             <p-tablist>
-                <p-tab value="0">BROWSE BY SELLER</p-tab>
-                <p-tab value="1">BROWSE BY PRODUCTS</p-tab>
+                <p-tab value="0">BROWSE BY PRODUCTS</p-tab>
+                <p-tab value="1">BROWSE BY SELLER</p-tab>
+                
             </p-tablist>
             <p-tabpanels>
                 <p-tabpanel value="0">
+                    <main style="padding:0 10px;" class="!px-0 lg:px-[12px]">
+                        <div class="products-container">
+                            @for(product of products.slice(0,5); track product.id){
+                                <div style="margin-bottom: 16px;">
+                                    <app-product-card [product]="product">
+                                        <!-- <button 
+                                            class="flex items-center justify-center"
+                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
+                                            flex-shrink:0;">
+                                            <img src="/assets/icons/heart-icon.svg" alt="" />
+                                    </button> -->
+                                    </app-product-card>
+                                </div>
+                            }
+                            <div class="flex flex-column justify-center items-center choosing-laptop">
+                                <h3 >PRO TIP</h3>
+                                <div class="flex flex-column justify-content items-center choosing-laptop-text">
+                                    <h2> Choosing </h2>
+                                    <h2>your next</h2>
+                                    <h2>Laptop</h2>
+                                </div>
+                                <div class="learn-more">
+                                    <a href="#">Learn more →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products-container" style="margin-top:24px;">
+                            @for(product of products.slice(5); track product.id){
+                                <div style="margin-bottom: 16px;">
+                                    <app-product-card [product]="product">
+                                        <!-- <button 
+                                            class="flex items-center justify-center"
+                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
+                                            flex-shrink:0;">
+                                            <img cla src="/assets/icons/heart-icon.svg" alt="" />
+                                    </button> -->
+                                    </app-product-card>
+                                </div>  
+                            }
+                        </div>
+                    </main>
+                </p-tabpanel>
+                <p-tabpanel value="1">
                     <div class="aside-search-group">
                         <input class="aside-search-input" type="text" placeholder="Search for seller" />
                         <svg class="aside-search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,49 +110,6 @@
                         <button class="button"><span>ADD TO CART</span> <img src="/assets/icons/arrow-right-white.svg" alt=""></button>
                         <button class="button"><span>VIEW DETAILS</span> <img src="/assets/icons/arrow-right.svg" alt=""></button>
                       </div>
-                </p-tabpanel>
-                <p-tabpanel value="1">
-                    <main style="padding:0 10px;">
-                        <div class="products-container">
-                            @for(product of products.slice(0,5); track product.id){
-                                <div style="margin-bottom: 16px;">
-                                    <app-product-card [product]="product">
-                                        <button 
-                                            class="flex items-center justify-center"
-                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
-                                            flex-shrink:0;">
-                                            <img src="/assets/icons/heart-icon.svg" alt="" />
-                                    </button>
-                                    </app-product-card>
-                                </div>
-                            }
-                            <div class="flex flex-column justify-center items-center choosing-laptop">
-                                <h3 >PRO TIP</h3>
-                                <div class="flex flex-column justify-content items-center choosing-laptop-text">
-                                    <h2> Choosing </h2>
-                                    <h2>your next</h2>
-                                    <h2>Laptop</h2>
-                                </div>
-                                <div class="learn-more">
-                                    <a href="#">Learn more →</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="products-container" style="margin-top:24px;">
-                            @for(product of products.slice(5); track product.id){
-                                <div style="margin-bottom: 16px;">
-                                    <app-product-card [product]="product">
-                                        <button 
-                                            class="flex items-center justify-center"
-                                            style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
-                                            flex-shrink:0;">
-                                            <img src="/assets/icons/heart-icon.svg" alt="" />
-                                    </button>
-                                    </app-product-card>
-                                </div>  
-                            }
-                        </div>
-                    </main>
                 </p-tabpanel>
             </p-tabpanels>
         </p-tabs>
