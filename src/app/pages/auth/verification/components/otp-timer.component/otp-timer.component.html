@@ -1,0 +1,22 @@
+<style>
+    .resend {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 14px;
+        text-decoration: none;
+        color: rgba(120, 146, 164, 1);
+    }
+    button:hover {
+        text-decoration: underline;
+    }
+    button{
+        width: fit-content;
+    }
+</style>
+<div style="gap: 1rem;" class="resend">
+    <span *ngIf="timeLeft > 0" class="text-[14px] text-[#5F6C72]">
+      Resend OTP in <strong>{{ formatTime() }}</strong>
+    </span>
+    <button *ngIf="timeLeft <= 0" type="button" (click)="onResend()">Resend Code</button>
+</div>

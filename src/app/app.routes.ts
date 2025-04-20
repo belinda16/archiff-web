@@ -4,8 +4,8 @@ import { SellerDashboardComponent } from './pages/seller-dashboard/seller-dashbo
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-import { VerificationComponent } from './pages/verification/verification.component';
-import { VerifiedComponent } from './pages/verified/verified.component';
+import { VerificationComponent } from './pages/auth/verification/verification.component';
+import { VerifiedComponent } from './pages/auth/verified/verified.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OffersComponent } from './pages/offers/offers.component';
@@ -18,6 +18,9 @@ import { OnboardingComponent } from './pages/onboarding/onboarding.component';
 import { BusinessOnboardingComponent } from './pages/business-onboarding/business-onboarding.component';
 import { LoginSellerCodeComponent } from './pages/auth/seller-code/seller-code.component';
 import { SellerCodeComponent } from './pages/seller-code/seller-code.component';
+import { OtpGuard } from './pages/auth/verification/guard/verify.guard';
+import { NotFoundComponent } from './pages/404/404.component';
+import { ResetPassword } from './pages/auth/reset-password/components/reset-password.component';
 
 export const routes: Routes = [
     {path:'', component:HomeComponent, pathMatch: 'full' },
@@ -39,7 +42,9 @@ export const routes: Routes = [
     { path:'login',component:LoginComponent},
     { path:'register',component:RegisterComponent},
     { path:'verify',component:VerificationComponent},
-    { path:'verified',component:VerifiedComponent},
+    { path:'reset-password',component:ResetPassword},
+    // ,canActivate:[OtpGuard]},
+    // { path:'verified',component:VerifiedComponent},
     { path:'profile',component:ProfileComponent},
     { path:'shop/:category',component:CategoryselectedComponent},
     { path:'filtered-product',component:FilteredProductPageComponent},
@@ -47,5 +52,6 @@ export const routes: Routes = [
     { path:'checkout',component:CheckoutComponent},
     { path:'onboarding',component:SellerCodeComponent},
     { path:'individual-onboarding',component:OnboardingComponent},
-    { path:'business-onboarding',component:BusinessOnboardingComponent}
+    { path:'business-onboarding',component:BusinessOnboardingComponent},
+    { path:'**',component:NotFoundComponent}
 ];

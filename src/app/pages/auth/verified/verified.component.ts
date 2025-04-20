@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { WaterMarkTextComponent } from '../../components/water-mark-text/water-mark-text.component';
-import { HeaderComponent } from '../../components/header/header.component';
-import { FooterComponent } from '../../components/footer/footer.component';
+import { WaterMarkTextComponent } from '../../../components/water-mark-text/water-mark-text.component';
+import { HeaderComponent } from '../../../components/header/header.component';
+import { FooterComponent } from '../../../components/footer/footer.component';
 
 @Component({
   selector: 'app-verified',
@@ -10,5 +10,5 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './verified.component.css'
 })
 export class VerifiedComponent {
-
+  
 }

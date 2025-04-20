@@ -10,7 +10,7 @@ import { WaterMarkTextComponent } from "../../components/water-mark-text/water-m
 
 @Component({
   selector: 'app-shop',
-  imports: [NavbarComponent, ShopFilterBarComponent, CategoriesSectionComponent, GadgetSectionComponent, ReviewComponent, FooterComponent, AboutFooterComponent, WaterMarkTextComponent],
+  imports: [NavbarComponent, ShopFilterBarComponent, CategoriesSectionComponent, GadgetSectionComponent, ReviewComponent, FooterComponent, AboutFooterComponent,],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })

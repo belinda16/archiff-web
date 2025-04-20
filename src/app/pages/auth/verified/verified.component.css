@@ -4,39 +4,12 @@ main{
     position: relative;
      overflow-x: hidden;
 }
-.watermark-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.watermark-container:nth-of-type(1){
-    top:16%;
-}
-.watermark-container:nth-of-type(2) {
-    top:36%;
-}
-.watermark-container:nth-of-type(3) {
-    top:66%;
-}
-.modal {
-    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
-    position: absolute;
-    top:20%;
-    left: 50%;
-    transform:translateX(-50%);
-    z-index: 10;
-    background: white;
-    padding: 32px 60px 48px;
-    text-align: center;
-    max-width:500px;
-    width: 85%;
-}
-.modal h2 {
+div h2 {
     margin-bottom: 16px;
     font-size: 20px;
     color: rgba(25, 28, 31, 1);
 }
-.modal p {
+div p {
     color: rgba(95, 108, 114, 1);
     margin-bottom: 20px;
     font-size: 14px;
@@ -79,11 +52,4 @@ input,.verify-btn{
 }
 .footer{
     padding-inline:40px;
-}
-
-@media screen and (max-width: 768px) {
-    .modal {
-        box-shadow: none;
-        padding-inline: 16px;
-    }
 }

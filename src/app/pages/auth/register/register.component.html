@@ -1,35 +1,55 @@
-<div style="min-height: 100%;position: relative;">
+<div style="min-height: 100%;position: relative;" class="grid grid-rows-[auto_1fr_auto]">
     <app-header></app-header>
     <div class="login-container">
         <div style="padding:24px">
             <div class="login-background-image-container">
-                <video preload="auto" id="login-background-video" autoplay muted loop playsinline>
+                <video #videoRef preload="auto" id="login-background-video" autoplay muted loop playsinline>
                     <source src="/assets/videos/archif-bg.mp4" type="video/mp4">
                     </video>
             </div>
         </div>
         <div class="login-form-container flex justify-center items-center flex-column">
             <div style="width:100%;">
+                <div class="text-[red] bg-red-100 px-2 py-2 border border-red-500 rounded-[8px] text-center text-[13px]" *ngIf="this.errorMessage !== ''">{{this.errorMessage}}</div>
                 <h2>Create an account</h2>
-                <form>
+                <form [formGroup]="registerForm">
                     <div style="margin-bottom: 24px;">
                         <div class="input-group">
                             <label for="name">Full name</label>
-                            <input type="name" id="name" placeholder="Jane Smith">
+                            <input class="placeholder-[#7892A4] placeholder-text-[14px]" formControlName="fullName" type="name" id="name" placeholder="Jane Smith">
+                            <div *ngIf="formControls.fullName.touched && formControls.fullName.invalid">
+                                <small class="text-[red] text-[13px]" *ngIf="formControls.fullName.errors?.['required']">Name is required</small>
+                            </div>
                         </div>
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="jane.smith@co.com">
+                            <input class="placeholder-[#7892A4] placeholder-text-[14px]" formControlName="email" type="email" id="email" placeholder="jane.smith@co.com">
+                            <div *ngIf="formControls.email.touched && formControls.email.invalid">
+                                <small class="text-[red] text-[13px]" *ngIf="formControls.email.errors?.['required']">An email is required</small>
+                                <small class="text-[red] text-[13px]" *ngIf="formControls.email.errors?.['email']">Please enter a valid email address</small>
+                            </div>
                         </div>
                         <div class="input-group">
                             <label for="password">Password</label>
                             <div class="password-container">
-                                <input type="password" id="password" placeholder="********">
+                                <input class="placeholder-[#7892A4] placeholder-text-[14px]" formControlName="password" type="password" id="password" placeholder="********">
                                 <img src="/assets/icons/password-eye.svg" class="eye-icon" alt=""/>
+                            </div>
+                            <div *ngIf="formControls.password.touched && formControls.password.invalid">
+                                <small class="text-[red] text-[13px]" *ngIf="formControls.password.errors?.['required']">Password is required</small>
+                                <small class="text-[red] text-[13px]" *ngIf="formControls.password.errors?.['minlength']">A minimum 8 characters is required</small>
                             </div>
                         </div>
                     </div>
-                    <a routerLink="/verify"><button type="submit" class="login-button">SIGN UP</button></a>
+                    <button type="button" (click)="register()" class="login-button flex items-center gap-3 justify-center">
+                        @if(loading){
+                            <span>SIGNING UP</span>
+                            <app-loader [loading]="loading"></app-loader>
+                        }@else {
+                            <span>SIGN UP</span>
+                        }
+                    </button>
+                
                 </form>
                 <div class="divider">or</div>
                 <button class="google-btn">

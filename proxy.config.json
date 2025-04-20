@@ -1,0 +1,8 @@
+{
+    "/api/**": {
+      "target": "https://archif-service.onrender.com",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  } 

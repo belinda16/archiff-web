@@ -1,179 +1,179 @@
-<main>
-    <div style="height: 100%;">
+<main class="min-h-full grid grid-rows-[auto_1fr_auto]">
+    <div style="height: 100%; width: 100%; max-width: 100%;">
         <app-header></app-header>
-        <!-- <div class="watermark-container first-water-mark">
-            <water-mark-text [customStyle]="{fontSize:'200px'}"  label="ARCHIFF"></water-mark-text>
-        </div>
-        <div class="watermark-container">
-            <water-mark-text [customStyle]="{fontSize:'200px'}"  label="ARCHIFF"></water-mark-text>
-        </div>
-        <div class="watermark-container">
-            <water-mark-text [customStyle]="{fontSize:'200px'}"  label="ARCHIFF"></water-mark-text>
-        </div> -->
     </div>
-    <div class="modal">
-        @if(currentScreenIndex == 1){
-        <h2>Business Seller Onboarding</h2>
-        <div>
-            <div class="flex items-center justify-center gap-[30px]">
-                <div class="flex items-center gap-[20px]">
-                    <div class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
-                        flex items-center justify-center border">
-                    1</div>
-                    <a class="cursor-pointer" class="cursor-pointer hidden lg:block" (click)="changeScreen(1)">Business Details</a>
-                </div>  
-                <div> 
-                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.503532 0.440056C0.544172 0.399313 0.59245 0.366988 0.645602 0.344932C0.698754 0.322876 0.755736 0.311523 0.813282 0.311523C0.870828 0.311523 0.927809 0.322876 0.980961 0.344932C1.03411 0.366988 1.08239 0.399313 1.12303 0.440056L6.37303 5.69006C6.41378 5.7307 6.4461 5.77897 6.46816 5.83213C6.49021 5.88528 6.50156 5.94226 6.50156 5.99981C6.50156 6.05735 6.49021 6.11433 6.46816 6.16748C6.4461 6.22064 6.41378 6.26892 6.37303 6.30956L1.12303 11.5596C1.04088 11.6417 0.929461 11.6879 0.813282 11.6879C0.697103 11.6879 0.585683 11.6417 0.503532 11.5596C0.421381 11.4774 0.375229 11.366 0.375229 11.2498C0.375229 11.1336 0.421381 11.0222 0.503532 10.9401L5.44466 5.99981L0.503532 1.05956C0.462789 1.01892 0.430464 0.970637 0.408408 0.917485C0.386353 0.864333 0.375 0.807352 0.375 0.749806C0.375 0.692259 0.386353 0.635278 0.408408 0.582126C0.430464 0.528974 0.462789 0.480696 0.503532 0.440056Z" fill="#9CA3AF"/>
-                    </svg>
-                </div>
-                <div class="flex items-center gap-[20px]">
-                    <div class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
-                        flex items-center justify-center border">
-                    2</div>
-                    <a class="cursor-pointer" class="cursor-pointer hidden lg:block" (click)="changeScreen(2)">Contact Details</a>
-                </div> 
-                <div> 
-                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.503532 0.440056C0.544172 0.399313 0.59245 0.366988 0.645602 0.344932C0.698754 0.322876 0.755736 0.311523 0.813282 0.311523C0.870828 0.311523 0.927809 0.322876 0.980961 0.344932C1.03411 0.366988 1.08239 0.399313 1.12303 0.440056L6.37303 5.69006C6.41378 5.7307 6.4461 5.77897 6.46816 5.83213C6.49021 5.88528 6.50156 5.94226 6.50156 5.99981C6.50156 6.05735 6.49021 6.11433 6.46816 6.16748C6.4461 6.22064 6.41378 6.26892 6.37303 6.30956L1.12303 11.5596C1.04088 11.6417 0.929461 11.6879 0.813282 11.6879C0.697103 11.6879 0.585683 11.6417 0.503532 11.5596C0.421381 11.4774 0.375229 11.366 0.375229 11.2498C0.375229 11.1336 0.421381 11.0222 0.503532 10.9401L5.44466 5.99981L0.503532 1.05956C0.462789 1.01892 0.430464 0.970637 0.408408 0.917485C0.386353 0.864333 0.375 0.807352 0.375 0.749806C0.375 0.692259 0.386353 0.635278 0.408408 0.582126C0.430464 0.528974 0.462789 0.480696 0.503532 0.440056Z" fill="#9CA3AF"/>
-                    </svg>
-                </div>
-                <div class="flex items-center gap-[20px]">
-                    <div class="h-8 w-8 rounded-[50%] 
-                        border border-[#E5E7EB] flex
-                        items-center justify-center "
-                    >3</div>
-                        <a class="cursor-pointer" class="cursor-pointer hidden lg:block" (click)="changeScreen(3)" >Very Important</a>
+    <div class="h-full relative flex justify-center items-center w-full max-w-full modal-container">
+        <div class="modal">
+            @if(currentScreenIndex == 1){
+            <h2>Business Seller Onboarding</h2>
+            <div>
+                <div class="flex items-center justify-center gap-[30px]">
+                    <div class="flex items-center gap-[20px]">
+                        <div class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
+                            flex items-center justify-center border">
+                        1</div>
+                        <a class="cursor-pointer" class="cursor-pointer hidden lg:block">Business Details</a>
+                    </div>  
+                    <div> 
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.503532 0.440056C0.544172 0.399313 0.59245 0.366988 0.645602 0.344932C0.698754 0.322876 0.755736 0.311523 0.813282 0.311523C0.870828 0.311523 0.927809 0.322876 0.980961 0.344932C1.03411 0.366988 1.08239 0.399313 1.12303 0.440056L6.37303 5.69006C6.41378 5.7307 6.4461 5.77897 6.46816 5.83213C6.49021 5.88528 6.50156 5.94226 6.50156 5.99981C6.50156 6.05735 6.49021 6.11433 6.46816 6.16748C6.4461 6.22064 6.41378 6.26892 6.37303 6.30956L1.12303 11.5596C1.04088 11.6417 0.929461 11.6879 0.813282 11.6879C0.697103 11.6879 0.585683 11.6417 0.503532 11.5596C0.421381 11.4774 0.375229 11.366 0.375229 11.2498C0.375229 11.1336 0.421381 11.0222 0.503532 10.9401L5.44466 5.99981L0.503532 1.05956C0.462789 1.01892 0.430464 0.970637 0.408408 0.917485C0.386353 0.864333 0.375 0.807352 0.375 0.749806C0.375 0.692259 0.386353 0.635278 0.408408 0.582126C0.430464 0.528974 0.462789 0.480696 0.503532 0.440056Z" fill="#9CA3AF"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center gap-[20px]">
+                        <div class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
+                            flex items-center justify-center border">
+                        2</div>
+                        <a class="cursor-pointer" class="cursor-pointer hidden lg:block">Contact Details</a>
+                    </div> 
+                    <div> 
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.503532 0.440056C0.544172 0.399313 0.59245 0.366988 0.645602 0.344932C0.698754 0.322876 0.755736 0.311523 0.813282 0.311523C0.870828 0.311523 0.927809 0.322876 0.980961 0.344932C1.03411 0.366988 1.08239 0.399313 1.12303 0.440056L6.37303 5.69006C6.41378 5.7307 6.4461 5.77897 6.46816 5.83213C6.49021 5.88528 6.50156 5.94226 6.50156 5.99981C6.50156 6.05735 6.49021 6.11433 6.46816 6.16748C6.4461 6.22064 6.41378 6.26892 6.37303 6.30956L1.12303 11.5596C1.04088 11.6417 0.929461 11.6879 0.813282 11.6879C0.697103 11.6879 0.585683 11.6417 0.503532 11.5596C0.421381 11.4774 0.375229 11.366 0.375229 11.2498C0.375229 11.1336 0.421381 11.0222 0.503532 10.9401L5.44466 5.99981L0.503532 1.05956C0.462789 1.01892 0.430464 0.970637 0.408408 0.917485C0.386353 0.864333 0.375 0.807352 0.375 0.749806C0.375 0.692259 0.386353 0.635278 0.408408 0.582126C0.430464 0.528974 0.462789 0.480696 0.503532 0.440056Z" fill="#9CA3AF"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center gap-[20px]">
+                        <div class="h-8 w-8 rounded-[50%] 
+                            border border-[#E5E7EB] flex
+                            items-center justify-center "
+                        >3</div>
+                            <a class="cursor-pointer" class="cursor-pointer hidden lg:block" >Very Important</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @if(currentViewIndex === 1){
-            <form>
-                <div class="!mt-[36px]">
-                    <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 lg:hidden">Business Details</h3>
-                    <div class="grid  lg:grid-cols-[repeat(3,1fr)] lg:gap-[24px]">
-                        <div class="input-group">
-                            <label class="text-[#191C1F]" for="name">Business Name</label>
-                            <input placeholder="John Doe" type="text" id="name" />
-                        </div>
-                        <div class="input-group">
-                            <label class="text-[#191C1F]" for="name">Business Type</label>
-                            <p-select 
-                                [options]="storeOptions"
-                                placeholder="Select Business Type"
-                                [showClear]="true"
-                                optionLabel="label"
-                                (onChange)="getBusinessType($event)"
-                            />
-                        </div>
-                        <div class="input-group">
-                            <label class="text-[#191C1F]" for="website">Business Website</label>
-                            <input type="text" placeholder="https://example" id="website" />
-                        </div>
-                    </div>
-                    <div class="grid lg:grid-cols-[1fr_2fr] lg:gap-[24px]">
-                        <div class="input-group">
-                            <label class="text-[#191C1F]" for="city-location">City Location</label>
-                            <input type="text" id="city-location" placeholder="Accra" />
-                        </div>
-                        @if(businessAddressLocationVisible){
+            @if(currentViewIndex === 1){
+                <form [formGroup]="businessForm">
+                    <div class="!mt-[36px]">
+                        <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 lg:hidden">Business Details</h3>
+                        <div class="grid  lg:grid-cols-[repeat(3,1fr)] lg:gap-[24px]">
                             <div class="input-group">
-                                <label class="text-[#191C1F]" for="address-location">Business Location Address (Optional)</label>
-                                <input type="text" id="address-location" placeholder="Address" />
+                                <label class="text-[#191C1F]" for="name">Business Name</label>
+                                <input formControlName="name" placeholder="John Doe" type="text" id="name" />
                             </div>
-                        }
-                    </div>
-                </div>
-                <div class="flex items-center flex-col-reverse lg:flex-row  justify-between  gap-[16px] !mt-[8px]">
-                    <button type="button" class="border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
-                        CANCEL
-                    </button>
-                    <button type="button" class="verify-btn flex items-center justify-center" (click)="showNextView()">
-                        CONTINUE
-                        <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
-                    </button>
-                </div>
-            </form>
-        }@else if(currentViewIndex === 2){
-            <form class="!mt-[36px]">
-                <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 lg:hidden">Contact Details</h3>
-                <div class="grid lg:grid-cols-[repeat(2,1fr)] lg:gap-x-[24px]">
-                    <div class="input-group">
-                        <label class="text-[#191C1F]" for="phone">Phone Number</label>
-                        <input placeholder="+34 495 903 4899" type="text" id="phone" />
-                    </div>
-                    <div class="input-group">
-                        <label class="text-[#191C1F]" for="email">Email</label>
-                        <input placeholder="example@email.com" type="email" id="email" />
-                    </div>
-                    <div class="input-group">
-                        <label class="text-[#191C1F]" for="instagram">Instagram Link</label>
-                        <input type="text" placeholder="https://example" id="instagram">
-                    </div>
-                </div>
-                <div class="flex items-center flex-col-reverse lg:flex-row  justify-between  gap-[16px] !mt-[8px]">
-                    <button type="button" class="border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
-                        CANCEL
-                    </button>
-                    <button type="button" class="verify-btn flex items-center justify-center" (click)="showNextView()">
-                        CONTINUE
-                        <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
-                    </button>
-                </div>
-            </form>
-        }
-        @else if(currentViewIndex === 3) {
-            <div class="max-w-[524px] mx-auto">
-                <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 mt-6 lg:hidden">Very Important</h3>
-                <div class="border border-[#CCCCCC] rounded-[16px] py-[24px] px-[16px] mt-[24px]">
-                    <div class="flex items-center gap-[6px]" >
-                        <div class="flex items-center ">
-                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.9375 0.616211C6.80832 0.616211 6.68139 0.650001 6.56932 0.714207L2.44584 3.03366L2.44451 3.03442C2.34248 3.09236 2.25555 3.17318 2.19043 3.27028C2.17992 3.28415 2.17025 3.29892 2.16153 3.31456C2.15592 3.32462 2.15083 3.33482 2.14624 3.34514C2.09192 3.45062 2.06314 3.5676 2.0625 3.68662V8.31051L2.06251 8.31252C2.06322 8.44522 2.09891 8.57539 2.16597 8.68989C2.23304 8.8044 2.32912 8.89919 2.44451 8.96472L2.44584 8.96548L6.56938 11.285C6.68143 11.3492 6.80834 11.3829 6.9375 11.3829C7.06666 11.3829 7.19357 11.3492 7.30562 11.285L11.4292 8.96548L11.4305 8.96472C11.5459 8.89919 11.642 8.8044 11.709 8.68989C11.7761 8.57539 11.8118 8.44522 11.8125 8.31252L11.4375 8.31051H11.8125L11.8125 3.68863L11.8125 3.68662C11.8119 3.56782 11.7832 3.45105 11.7291 3.34573C11.724 3.3343 11.7183 3.32301 11.712 3.31191C11.7036 3.29711 11.6943 3.2831 11.6843 3.26991C11.6192 3.17298 11.5324 3.09229 11.4305 3.03442L7.30568 0.714207C7.19361 0.650001 7.06669 0.616211 6.9375 0.616211ZM2.8125 8.3087V4.10674L6.60282 6.21951L6.5674 10.4233L2.81474 8.31247C2.81408 8.31207 2.81353 8.31151 2.81314 8.31084C2.81275 8.31019 2.81254 8.30945 2.8125 8.3087ZM7.31747 10.4178L11.0601 8.31255C11.0608 8.31214 11.0615 8.31151 11.0619 8.31084L11.0624 8.30952L11.0625 8.3087V4.11217L9.60932 4.9377V7.14851C9.60932 7.35561 9.44143 7.52351 9.23432 7.52351C9.02722 7.52351 8.85932 7.35561 8.85932 7.14851V5.36377L7.35285 6.21957L7.31747 10.4178ZM6.97796 5.56997L8.47416 4.72L4.68908 2.63235L3.20524 3.46701L6.97796 5.56997ZM10.6748 3.46985L9.23916 4.28542L5.45791 2.19989L6.9375 1.36762L10.6748 3.46985Z" fill="#828282"/>
-                            </svg>
+                            <div class="input-group">
+                                <label class="text-[#191C1F]" for="name">Business Type</label>
+                                <p-select 
+                                    [options]="storeOptions"
+                                    placeholder="Select Business Type"
+                                    [showClear]="true"
+                                    optionLabel="label"
+                                    formControlName="type"
+                                    (onChange)="getBusinessType($event)"
+                                />
+                            </div>
+                            <div class="input-group">
+                                <label class="text-[#191C1F]" for="website">Business Website</label>
+                                <input  formControlName="website" type="text" placeholder="https://example" id="website" />
+                            </div>
                         </div>
-                        <h2 class="!font-[400] !mb-0 !text-[#828282]  !text-[14px]">Important Things to Note</h2>
+                        <div class="grid lg:grid-cols-[1fr_2fr] lg:gap-[24px]">
+                            <div class="input-group">
+                                <label class="text-[#191C1F]" for="city-location">City Location</label>
+                                <input type="text" formControlName="city" id="city-location" placeholder="Accra" />
+                            </div>
+                            @if(businessAddressLocationVisible){
+                                <div class="input-group">
+                                    <label class="text-[#191C1F]" for="street">Street</label>
+                                    <input type="text" formControlName="street" id="street" placeholder="Street" />
+                                </div>
+                            }
+                        </div>
                     </div>
-                    <div>
-                        <ul class="pt-3 px-4">
-                            <li>Once submitted, we will verify the account to ensure it represents a legitimate store.</li>
-                            <li>Upon approval, you can list items immediately without any delay!.</li>
-                        </ul>
+                    <div class="flex items-center flex-col-reverse lg:flex-row  justify-between  gap-[16px] !mt-[8px]">
+                        <button (click)="cancelOnboarding()" type="button" class="border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
+                            CANCEL
+                        </button>
+                        <button type="button" class="verify-btn flex items-center justify-center" (click)="showNextView()">
+                            CONTINUE
+                            <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                        </button>
+                    </div>
+                </form>
+            }@else if(currentViewIndex === 2){
+                <form [formGroup]="contactForm" class="!mt-[36px]">
+                    <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 lg:hidden">Contact Details</h3>
+                    <div class="grid lg:grid-cols-[repeat(2,1fr)] lg:gap-x-[24px]">
+                        <div class="input-group">
+                            <label class="text-[#191C1F]" for="phone">Phone Number</label>
+                            <input formControlName="phone" placeholder="+34 495 903 4899" type="text" id="phone" />
+                        </div>
+                        <div class="input-group">
+                            <label class="text-[#191C1F]" for="email">Email</label>
+                            <input formControlName="email" placeholder="example@email.com" type="email" id="email" />
+                        </div>
+                        <div class="input-group">
+                            <label class="text-[#191C1F]" for="instagram">Instagram Link</label>
+                            <input type="text" formControlName="instagram" placeholder="https://example" id="instagram">
+                        </div>
+                    </div>
+                    <div class="flex items-center flex-col-reverse lg:flex-row  justify-between  gap-[16px] !mt-[8px]">
+                        <button (click)="showPreviousView()" type="button" class="border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
+                            CANCEL
+                        </button>
+                        <button type="button" class="verify-btn flex items-center justify-center" (click)="showNextView()">
+                            CONTINUE
+                            <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                        </button>
+                    </div>
+                </form>
+            }
+            @else if(currentViewIndex === 3) {
+                <div class="max-w-[524px] mx-auto">
+                    <div class="text-[red] bg-red-100 px-2 py-2 border border-red-500 rounded-[8px] mt-5 text-center text-[13px]" *ngIf="this.errorMessage !== ''">{{this.errorMessage}}</div>
+                    <h3 class="text-left text-[#030303] text-[18px] font-[400] mb-6 mt-6 lg:hidden">Very Important</h3>
+                    <div class="border border-[#CCCCCC] rounded-[16px] py-[24px] px-[16px] mt-[24px]">
+                        <div class="flex items-center gap-[6px]" >
+                            <div class="flex items-center ">
+                                <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.9375 0.616211C6.80832 0.616211 6.68139 0.650001 6.56932 0.714207L2.44584 3.03366L2.44451 3.03442C2.34248 3.09236 2.25555 3.17318 2.19043 3.27028C2.17992 3.28415 2.17025 3.29892 2.16153 3.31456C2.15592 3.32462 2.15083 3.33482 2.14624 3.34514C2.09192 3.45062 2.06314 3.5676 2.0625 3.68662V8.31051L2.06251 8.31252C2.06322 8.44522 2.09891 8.57539 2.16597 8.68989C2.23304 8.8044 2.32912 8.89919 2.44451 8.96472L2.44584 8.96548L6.56938 11.285C6.68143 11.3492 6.80834 11.3829 6.9375 11.3829C7.06666 11.3829 7.19357 11.3492 7.30562 11.285L11.4292 8.96548L11.4305 8.96472C11.5459 8.89919 11.642 8.8044 11.709 8.68989C11.7761 8.57539 11.8118 8.44522 11.8125 8.31252L11.4375 8.31051H11.8125L11.8125 3.68863L11.8125 3.68662C11.8119 3.56782 11.7832 3.45105 11.7291 3.34573C11.724 3.3343 11.7183 3.32301 11.712 3.31191C11.7036 3.29711 11.6943 3.2831 11.6843 3.26991C11.6192 3.17298 11.5324 3.09229 11.4305 3.03442L7.30568 0.714207C7.19361 0.650001 7.06669 0.616211 6.9375 0.616211ZM2.8125 8.3087V4.10674L6.60282 6.21951L6.5674 10.4233L2.81474 8.31247C2.81408 8.31207 2.81353 8.31151 2.81314 8.31084C2.81275 8.31019 2.81254 8.30945 2.8125 8.3087ZM7.31747 10.4178L11.0601 8.31255C11.0608 8.31214 11.0615 8.31151 11.0619 8.31084L11.0624 8.30952L11.0625 8.3087V4.11217L9.60932 4.9377V7.14851C9.60932 7.35561 9.44143 7.52351 9.23432 7.52351C9.02722 7.52351 8.85932 7.35561 8.85932 7.14851V5.36377L7.35285 6.21957L7.31747 10.4178ZM6.97796 5.56997L8.47416 4.72L4.68908 2.63235L3.20524 3.46701L6.97796 5.56997ZM10.6748 3.46985L9.23916 4.28542L5.45791 2.19989L6.9375 1.36762L10.6748 3.46985Z" fill="#828282"/>
+                                </svg>
+                            </div>
+                            <h2 class="!font-[400] !mb-0 !text-[#828282]  !text-[14px]">Important Things to Note</h2>
+                        </div>
+                        <div>
+                            <ul class="pt-3 px-4">
+                                <li>Once submitted, we will verify the account to ensure it represents a legitimate store.</li>
+                                <li>Upon approval, you can list items immediately without any delay!.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex  flex-col-reverse lg:flex-row items-center justify-between  gap-[16px] !mt-[24px]">
+                        <button (click)="cancelOnboarding()" class="flex-[1.5] border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
+                            CANCEL
+                        </button>
+                        <button  class="flex-2 verify-btn uppercase flex items-center justify-center" (click)="completeOnBoarding()">
+                           
+                            @if(loading){
+                                <span>SUBMITTING</span>
+                                <app-loader [loading]="loading"></app-loader>
+                            }@else {
+                                SUBMIT APPLICATION
+                                <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                            }
+                        </button>
                     </div>
                 </div>
-                <div class="flex  flex-col-reverse lg:flex-row items-center justify-between  gap-[16px] !mt-[24px]">
-                    <button class="flex-[1.5] border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
-                        CANCEL
-                    </button>
-                    <button class="flex-2 verify-btn uppercase flex items-center justify-center" (click)="showNextScreen()">
-                        SUBMIT APPLICATION
+            }
+        }@else {
+            <h2>Application Submitted Successfully</h2>
+            <div class="max-w-[524px] mx-auto">
+                <div class="border border-[#CCCCCC] rounded-[16px] py-[24px] px-[16px] mt-[24px] flex flex-col items-center gap-[18px] justify-center">
+                    <div class="w-12 h-12 rounded-[50%] bg-[#16B464] flex justify-center items-center">
+                        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.57031 10.3005L8.3971 17.7274L24.0987 2.13086" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        </svg>   
+                    </div>
+                    <p class="text-[14px] text-[#030303] leading-[130%]">Application has been submitted and is receiving attention. We will review and send feedback on the outcome within 48 working hours.</p>
+                </div>
+                <a routerLink="/shop">
+                    <button class="mt-6 max-w-[370px] mx-auto w-full verify-btn uppercase flex items-center justify-center">
+                        BACK TO THE SHOP
                         <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
                     </button>
-                </div>
+                </a>
             </div>
         }
-    }@else {
-        <h2>Application Submitted Successfully</h2>
-        <div class="max-w-[524px] mx-auto">
-            <div class="border border-[#CCCCCC] rounded-[16px] py-[24px] px-[16px] mt-[24px] flex flex-col items-center gap-[18px] justify-center">
-                <div class="w-12 h-12 rounded-[50%] bg-[#16B464] flex justify-center items-center">
-                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.57031 10.3005L8.3971 17.7274L24.0987 2.13086" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    </svg>   
-                </div>
-                <p class="text-[14px] text-[#030303] leading-[130%]">Application has been submitted and is receiving attention. We will review and send feedback on the outcome within 48 working hours.</p>
-            </div>
-            <a routerLink="/shop">
-                <button class="mt-6 max-w-[370px] mx-auto w-full verify-btn uppercase flex items-center justify-center">
-                    BACK TO THE SHOP
-                    <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
-                </button>
-            </a>
-        </div>
-    }
     </div>
-
-    <div class="!border-t-2 !border-t-[#EDEDED] footer  hidden lg:block" >
+    </div>
+    <div class="!border-t-2 !border-t-[#EDEDED] footer" >
         <app-footer></app-footer>
     </div> 
 </main>

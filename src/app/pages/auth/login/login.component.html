@@ -1,32 +1,43 @@
 
-<div class="h-full w-full">
+<div style="min-height: 100%;position: relative;"  class="grid grid-rows-[auto_1fr_auto]">
     <app-header></app-header>
     <div class="login-container">
         <div style="padding:24px">
             <div  class="login-background-image-container">
-                <video  id="login-background-video" preload="auto" autoplay muted loop playsinline>
+                <video #videoRef  id="login-background-video" preload="auto" autoplay muted loop playsinline>
                     <source src="/assets/videos/archif-bg.mp4" type="video/mp4">
                   </video>
             </div>
         </div>
         <div class="login-form-container flex justify-center items-center flex-column">
             <div style="width:100%;">
+                <div class="text-[red] bg-red-100 px-2 py-2 border border-red-500 rounded-[8px] text-center text-[13px]" *ngIf="this.errorMessage !== ''">{{this.errorMessage}}</div>
                 <h2>Welcome Back</h2>
-                <form>
+                <form [formGroup]="loginForm" (ngSubmit)="signIn()">
                     <div style="margin-bottom: 24px;">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="jane.smith@co.com">
+                            <input class="placeholder-[#7892A4]" formControlName="email" type="email" id="email" placeholder="jane.smith@co.com">
                         </div>
                         <div class="input-group">
                             <label for="password">Password</label>
                             <div class="password-container">
-                                <input type="password" id="password" placeholder="********">
-                                <img src="/assets/icons/password-eye.svg" class="eye-icon" alt=""/>
+                                <input class="placeholder-[#7892A4]" formControlName="password" [type]="showPassword ? 'text' : 'password'" id="password" placeholder="********">
+                                <button type="button" (click)="togglePasswordVisibility()"><img src="/assets/icons/password-eye.svg" class="eye-icon" alt=""/></button>
                             </div>
                         </div>
                     </div>
-                    <a routerLink="/profile"><button type="submit" class="login-button">SIGN IN</button></a>
+                    <a class="hover:underline text-[14px] font-normal cursor-pointer mb-4 block " routerLink="/reset-password">Forgot password</a>
+                    <button type="button" (click)="signIn()" class="login-button flex items-center gap-3 justify-center">
+                        
+                        @if(loading){
+                            <span>SIGNING IN</span>
+                            <app-loader [loading]="loading"></app-loader>
+                        }@else {
+                            <span>SIGN IN</span>
+                        }
+                        
+                    </button>
                 </form>
                 <div class="divider">or</div>
                

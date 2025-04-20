@@ -2,7 +2,10 @@ main{
     height: 100%;
     background-color: var(--archiff-secondary-color);
     position: relative;
-     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    padding-inline: 8px;
+    justify-content: center;
 }
 .watermark-container {
     position: absolute;
@@ -11,26 +14,22 @@ main{
     z-index: -1;
 }
 .watermark-container:nth-of-type(1){
-    top:20%;
+    top:10%;
 }
 .watermark-container:nth-of-type(2) {
-    top:60%;
+    top:40%;
 }
 .watermark-container:nth-of-type(3) {
-    top:85%;
+    top:60%;
 }
 .modal {
     box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
-    position: absolute;
-    top:20%;
-    left: 50%;
-    transform:translateX(-50%);
     z-index: 10;
     background: white;
     padding: 32px 70px 48px;
     text-align: center;
     max-width:900px;
-    width: 85%;
+    width: 100%;
 }
 .modal h2 {
     margin-bottom: 24px;
@@ -54,7 +53,7 @@ label {
     font-size: 14px;
 }
 input {
-    width: 100%;
+    max-width: 100%;
     padding: 10px;
     border: 1px solid rgba(228, 231, 233, 1);
     font-size: 14px;
@@ -94,10 +93,16 @@ li{
     font-size: 14px;
 }
 @media screen and (max-width: 768px) {
+    input{
+        min-width: 0;
+    }
     .modal {
         box-shadow: none;
         padding-inline: 0px;
         padding-top:0;
+    }
+    .modal-container{
+        width: 100%;
     }
 }
 

@@ -1,0 +1,43 @@
+<main>
+    <div style="height: 100%;">
+        <app-header></app-header>
+        <div class="watermark-container first-water-mark">
+            <water-mark-text label="ARCHIFF"></water-mark-text>
+        </div>
+        <div class="watermark-container">
+            <water-mark-text  label="ARCHIFF"></water-mark-text>
+        </div>
+        <div class="watermark-container">
+            <water-mark-text label="ARCHIFF"></water-mark-text>
+        </div>
+    </div>
+    <div class="modal">
+        @if(currentView === 1){
+            <h2>Verify Your Email Address</h2>
+            <p>A unique code has been sent to your email address</p>
+            <form class="input-group mb-5" [formGroup]="otpForm">
+                <label for="verification-code">Verification Code</label>
+                <input type="text" formControlName="code"
+                class="placeholder:text-[14px] placeholder:text-[#475156]"
+                id="verification-code" placeholder="Enter Code"
+                />
+                <app-otp-timer (resend)="resendOtp()" />
+            </form>
+            <div class="text-[red] mb-4 text-center text-[14px]" *ngIf="this.errorMessage !== ''">{{this.errorMessage}}</div>
+            <button (click)="verifyEmail()" class="verify-btn flex gap-1 items-center justify-center">
+                @if(loading){
+                    <span>VERIFYING</span>
+                    <app-loader [loading]="loading"></app-loader>
+                }@else {
+                    VERIFY ME 
+                    <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                }
+            </button>
+        }@else{
+            <app-verified></app-verified>
+        }
+    </div>
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>  
+</main>
