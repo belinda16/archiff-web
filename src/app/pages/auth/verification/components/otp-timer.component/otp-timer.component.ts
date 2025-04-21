@@ -9,7 +9,7 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './otp-timer.component.html',
 })
 export class OtpTimerComponent implements OnInit, OnDestroy {
-  @Input() duration = 300;
+  @Input() duration = 60;
   @Output() timerFinished = new EventEmitter<void>();
   @Output() resend = new EventEmitter<void>();
 
