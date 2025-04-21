@@ -70,8 +70,6 @@ export class LoginComponent {
         if (error.status === statusCodes.UNAUTHORIZED) {
           this.errorMessage = error.response?.data.message;
           console.log(this.errorMessage);
-        } else if (error.status === statusCodes.BAD_REQUEST) {
-          // this.errorMessage = PASSWORD_LENGTH_ERROR;
         } else {
           this.errorMessage =
             error.response?.data.error?.message ||

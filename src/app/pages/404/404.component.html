@@ -4,6 +4,8 @@
         background-color: var(--archiff-secondary-color);
         position: relative;
         overflow-x: hidden;
+        max-width: 100vw;
+        width:100%;
     }
     .watermark-container {
         position: absolute;
@@ -20,14 +22,14 @@
         top:66%;
     }
 </style>
-<main>
-    <div class="min-h-full grid grid-rows-[auto_1fr_auto]">
+<main class="px-2">
+    <div class="min-h-full grid grid-rows-[auto_1fr_auto] !min-w-0 ">
         <app-header></app-header>
-        <div class="grid grid-rows-[1fr_2.2fr] lg:grid-rows-[1fr] lg:grid-cols-[repeat(2,1fr)]">
-            <div class="relative p-4 z-[500] h-full">
-                <div class="h-full relative rounded-[16px]">
+        <div class="grid grid-rows-[1fr_2.2fr] !min-w-0  justify-center items-center lg:grid-rows-[1fr] lg:grid-cols-[repeat(2,1fr)]">
+            <div class="relative lg:p-4 z-[500] h-full">
+                <div class="h-full w-full max-w-full mx-auto !min-w-0  relative rounded-[16px]">
                     <video 
-                        class="h-full  lg:rounded-[20px] w-full object-cover absolute inset-0"
+                        class="h-full !min-w-0  w-full lg:rounded-[20px] w-full object-cover absolute inset-0"
                         muted 
                         autoplay 
                         loop 
@@ -39,14 +41,14 @@
                 </div>
             </div>
             <div class="bg-[#FFFFFF] relative z-[500] flex gap-8 flex-col items-center justify-center">
-                <h1 class="text-[grey] font-bold text-[clamp(150px,20vw,250px)]">4<span class="mx-5 px-6 py-2 shadow-2xl rounded-[16px] text-black">0</span>4</h1>
+                <h1 class="text-[grey] font-bold text-[clamp(120px,20vw,250px)]">4<span class="mx-5 px-6 py-2 shadow-2xl rounded-[16px] text-black">0</span>4</h1>
                 <p class="text-[gray] text-[clamp(16px,2vw,20px)] px-[40px] text-center">The page you are looking for was moved, removed, renamed or might never existed</p>
-                <a routerLink="/" class="max-w-[20rem] text w-[90%] mx-auto w-full block py-3 !bg-[#000] text-[white]"><button class='text-center w-full'>GO HOME</button></a>
+                <a routerLink="/" class="max-w-[20rem] text w-[90%] mx-auto w-full block py-3 !bg-[#000] text-[white]"><button class='!min-w-0  text-center w-full'>GO HOME</button></a>
             </div>
         </div>
-        <div class="px-10">
+        <!-- <div class="px-10">
             <app-footer></app-footer>
-        </div>
+        </div> -->
         
     </div>
 </main>

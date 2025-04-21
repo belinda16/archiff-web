@@ -5,7 +5,7 @@ import { FooterComponent } from '../../../../components/footer/footer.component'
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from '../../../../components/loader/loader.component';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AxiosError } from 'axios';
 import { AuthService } from '../../../../services/auth/auth.service';
 import { OtpFlowService } from '../../../../services/otp/otp-flow-service.service';
@@ -14,7 +14,7 @@ import { statusCodes } from '../../../../constants/status-codes';
 
 @Component({
   selector: 'app-verification',
-  imports: [HeaderComponent, WaterMarkTextComponent, FooterComponent, CommonModule, LoaderComponent, ReactiveFormsModule, OtpTimerComponent],
+  imports: [HeaderComponent, WaterMarkTextComponent,RouterLink, FooterComponent, CommonModule, LoaderComponent, ReactiveFormsModule, OtpTimerComponent],
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.css'
 })
@@ -82,26 +82,25 @@ export class ResetPassword {
         finally{
             this.loading = false;
         }
-    }
+      }
     }
     async requestPasswordReset(){
-      this.loading = true
-      if(this.emailForm.valid){
-        const email = this.emailForm.value.email as string;
-        try{
-          const response = await this.authService.requestPasswordReset(email);
-          if(response.status === statusCodes.OK){
-            this.showNextView();
-          }
-        }catch(error){
-          if (error instanceof AxiosError) {
-              this.errorMessage = error.response?.data.message;
-          }
-        }finally{
-          this.loading = false;
+      if (!this.emailForm.valid) {
+        return;
+      }
+      this.loading = true;
+      const email = this.emailForm.value.email as string;
+      try{
+        const response = await this.authService.requestPasswordReset(email);
+        if(response.status === statusCodes.OK){
+          this.showNextView();
         }
-      }else{
-        this.errorMessage = "Email must be a valid e-mail";
+      }catch(error){
+        if(error instanceof AxiosError) {
+            this.errorMessage = error.response?.data.message;
+        }
+      }finally{
+        this.loading = false;
       }
     }
     async verifyResetOtp(){
@@ -110,6 +109,7 @@ export class ResetPassword {
       const email = this.emailForm.value.email as string;
       try{
           const response = await this.authService.verifyResetOtp({email,code});
+          this.errorMessage = "";
           if(response.status === statusCodes.OK){
             this.showNextView();
           }

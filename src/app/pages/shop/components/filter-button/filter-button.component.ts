@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
   selector: 'filter-button',
   imports: [],
   templateUrl: './filter-button.component.html',
-  styleUrl: './filter-button.component.css'
 })
 export class FilterButtonComponent {
   @Input() label = "";

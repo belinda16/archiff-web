@@ -43,8 +43,6 @@ export const routes: Routes = [
     { path:'register',component:RegisterComponent},
     { path:'verify',component:VerificationComponent},
     { path:'reset-password',component:ResetPassword},
-    // ,canActivate:[OtpGuard]},
-    // { path:'verified',component:VerifiedComponent},
     { path:'profile',component:ProfileComponent},
     { path:'shop/:category',component:CategoryselectedComponent},
     { path:'filtered-product',component:FilteredProductPageComponent},

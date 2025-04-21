@@ -4,7 +4,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { Router, RouterLink } from "@angular/router";
 import { SelectModule } from "primeng/select";
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth/auth.service";
 import { Axios, AxiosError } from "axios";
 import { CommonModule } from "@angular/common";
@@ -50,18 +50,42 @@ export class BusinessOnboardingComponent {
     errorMessage = '';
     authService = inject(AuthService);
     loading = false;
-    businessForm = new FormGroup({
-        name: new FormControl(''),
-        type:new FormControl(''),
-        website: new FormControl(''),
-        street:new FormControl(''),
-        city:new FormControl('')
+    businessOnboardingFormBuilder = new FormBuilder();
+    businessForm = this.businessOnboardingFormBuilder.group({
+        name: ['',[Validators.required]],
+        type:['',[Validators.required]],
+        website: ['',[Validators.required]],
+        street:['',[Validators.required]],
+        city:['',[Validators.required]],
     });
-    contactForm = new FormGroup({
-        phone: new FormControl(''),
-        email:new FormControl(''),
-        instagram:new FormControl('')
+    contactOnboardingFormBuilder = new FormBuilder();
+    contactForm =this.contactOnboardingFormBuilder.group({
+        phone: ['',[Validators.required]],
+        email:['',[Validators.required,Validators.email]],
+        instagram:['',[Validators.required]],
     })
+    get name(){
+        return this.businessForm.get("name")!;
+    }
+    get city(){
+        return this.businessForm.get("city")!;
+    }
+    get street(){
+        return this.businessForm.get("street")!;
+    }
+    get website(){
+        return this.businessForm.get("website")!;
+    }
+    get phone(){
+        return this.contactForm.get("phone")!;
+    }
+    get instagram(){
+        return this.contactForm.get("instagram")!;
+    }
+    get email(){
+        return this.contactForm.get("email")!;
+    }
+
     async completeOnBoarding(){
         const onboardingInfo:BusinessOnboardingInfo = {
             type:"business",
@@ -85,9 +109,8 @@ export class BusinessOnboardingComponent {
             this.loading = true;
             const response = await this.authService.OnboardBusiness(onboardingInfo);
             if(response.status === statusCodes.CREATED){
-                this.showNextView()
+                this.showNextScreen()
             }
-            console.log(response)
         }catch(error){
             if(error instanceof AxiosError){
                 if(error.response?.status === statusCodes.UNAUTHORIZED){
@@ -106,7 +129,12 @@ export class BusinessOnboardingComponent {
     constructor(private router: Router) {}
 
     showNextView(){
-        this.currentViewIndex += 1;
+        if(this.currentViewIndex === 1 && this.businessForm.valid){
+            this.currentViewIndex += 1;
+        }else if(this.currentViewIndex == 2 && this.contactForm.valid){
+            this.currentViewIndex += 1;
+        }
+       
     }
     showNextScreen(){
         this.currentScreenIndex += 1;

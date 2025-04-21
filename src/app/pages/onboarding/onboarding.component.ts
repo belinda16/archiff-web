@@ -3,35 +3,54 @@ import { WaterMarkTextComponent } from "../../components/water-mark-text/water-m
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { Router, RouterLink } from "@angular/router";
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth/auth.service";
 import { statusCodes } from "../../constants/status-codes";
 import { AxiosError } from "axios";
+import { CommonModule } from "@angular/common";
+import { LoaderComponent } from "../../components/loader/loader.component";
 
 @Component({
     selector:"onboarding",
     templateUrl:"onboarding.component.html",
     styleUrl:"onboarding.component.css",
-    imports: [WaterMarkTextComponent, HeaderComponent, FooterComponent,RouterLink,ReactiveFormsModule]
+    imports: [HeaderComponent, FooterComponent, RouterLink, ReactiveFormsModule, CommonModule, LoaderComponent]
 })
 export class OnboardingComponent {
+    constructor(private router: Router) {}
     errorMessage = '';
     currentViewIndex = 1;
     currentScreenIndex = 1;
     loading = false;
     authService = inject(AuthService);
-    onboardingForm = new FormGroup({
-        name: new FormControl(''),
-        email:new FormControl(''),
-        city: new FormControl(''),
-        street:new FormControl('')
+    onboardingFormBuilder = new FormBuilder();
+    onboardingForm = this.onboardingFormBuilder.group({
+        name: ['',[Validators.required]],
+        email:['',[Validators.required,Validators.email]],
+        city:['',[Validators.required]],
+        street:['',[Validators.required]]
     });
-    constructor(private router: Router) {}
+    get email(){
+        return this.onboardingForm.get("email")!;
+    }
+    get name(){
+        return this.onboardingForm.get("name")!;
+    }
+    get city(){
+        return this.onboardingForm.get("city")!;
+    }
+    get street(){
+        return this.onboardingForm.get("street")!;
+    }
     showNextView(){
         this.currentViewIndex += 1;
     }
     showNextScreen(){
         this.currentScreenIndex += 1;
+    }
+    showNextForm(){
+        if(this.onboardingForm.valid)
+            this.currentViewIndex += 1;
     }
     async completeOnboarding(){
          const onboardingInfo = {
@@ -52,9 +71,9 @@ export class OnboardingComponent {
             this.loading = true;
             const response = await this.authService.onboardIndividual(onboardingInfo);
             if(response.status === statusCodes.CREATED){
-                this.showNextView()
+                console.log(response.status);
+                this.showNextScreen()
             }
-            console.log(response)
         }catch(error){
             if(error instanceof AxiosError){
                 if(error.response?.status === statusCodes.UNAUTHORIZED){

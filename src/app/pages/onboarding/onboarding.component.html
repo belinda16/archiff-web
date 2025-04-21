@@ -1,7 +1,7 @@
 <main class="grid grid-rows-[auto_1fr_auto]">
     <div style="height: 100%;">
         <app-header></app-header>
-        <div>
+        <!-- <div>
             <div class="watermark-container first-water-mark">
                 <water-mark-text [customStyle]="{fontSize:'200px'}"  label="ARCHIFF"></water-mark-text>
             </div>
@@ -11,7 +11,7 @@
             <div class="watermark-container">
                 <water-mark-text [customStyle]="{fontSize:'200px'}"  label="ARCHIFF"></water-mark-text>
             </div>
-        </div>
+        </div> -->
     </div>
     <div>
         <div class="modal h-full lg:h-auto">
@@ -20,7 +20,7 @@
             <div>
                 <div class="flex items-center justify-center gap-[30px]">
                     <div class="flex items-center gap-[20px]">
-                        <div class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
+                        <div [style.border]="currentViewIndex === 1 ? '3px solid #333' :''" class="h-8 w-8 rounded-[50%] border border-[#E5E7EB]
                             flex items-center justify-center border">
                         1</div>
                         <a class="cursor-pointer hidden lg:block">Personal Details</a>
@@ -31,7 +31,9 @@
                         </svg>
                     </div>
                     <div class="flex items-center gap-[20px]">
-                        <div class="h-8 w-8 rounded-[50%] 
+                        <div 
+                            [style.border]="currentViewIndex === 2 ? '3px solid #333' :''"
+                            class="h-8 w-8 rounded-[50%] 
                             border border-[#E5E7EB] flex
                             items-center justify-center "
                         >2</div>
@@ -46,20 +48,24 @@
                         <div class="input-group">
                             <label class="text-[#191C1F]" for="name">Your Name</label>
                             <input formControlName="name" placeholder="John Doe" type="text" id="name" />
+                            <div class="text-[red] mb-3 text-start text-[14px]" *ngIf="name.touched &&  !name.valid">Please provide a name.</div>
                         </div>
                         <div class="input-group">
                             <label class="text-[#191C1F]" for="email">Email Address</label>
                             <input formControlName="email" type="text" placeholder="example@email.com" id="email" />
+                            <div class="text-[red] mb-3 text-start text-[14px]" *ngIf="email.touched && email.value != '' && !email.valid">Please enter a valid email address.</div>
                         </div>
                     </div>
                     <div class="grid lg:grid-cols-[1fr_2fr] lg:gap-[24px]">
                         <div class="input-group">
                             <label class="text-[#191C1F]" for="city">City Location</label>
                             <input formControlName="city" type="text" id="city" placeholder="Accra" />
+                            <div class="text-[red] mb-3 text-start text-[14px]" *ngIf="city.touched && !city.valid">Please provide a city</div>
                         </div>
                         <div class="input-group">
                             <label class="text-[#191C1F]" for="street">Street</label>
                             <input type="text" id="street" formControlName="street" />
+                            <div class="text-[red] mb-3 text-start text-[14px]" *ngIf="street.touched && !street.valid">Please provide a street name</div>
                         </div>
                     </div>
                 </form>
@@ -67,7 +73,7 @@
                     <button (click)="cancelOnboarding()" class="border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
                         CANCEL
                     </button>
-                    <button class="verify-btn flex items-center justify-center" (click)="showNextView()">
+                    <button [disabled]="!onboardingForm.valid" class="disabled:opacity-50 disabled:!cursor-not-allowed verify-btn flex items-center justify-center" (click)="showNextForm()">
                         CONTINUE
                         <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
                     </button>
@@ -96,9 +102,14 @@
                         <button (click)="cancelOnboarding()" class="flex-[1.5] border-2 border-[#7676801F] text-[14px] !p-[10px] bg-transparent w-full flex items-center justify-center">
                             CANCEL
                         </button>
-                        <button class="flex-2 verify-btn uppercase flex items-center justify-center" (click)="showNextScreen()">
-                            SUBMIT APPLICATION
-                            <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                        <button class="flex-2 verify-btn uppercase flex items-center justify-center" (click)="completeOnboarding()">
+                            @if(loading){
+                                <span class="text-[14px]">SUBMITTING</span>
+                                <app-loader [loading]="loading"></app-loader>
+                            }@else {
+                                <span class="text-[14px]">SUBMIT APPLICATION</span>
+                                <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
+                            }
                         </button>
                     </div>
                 </div>
