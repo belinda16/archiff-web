@@ -92,6 +92,10 @@ export class AuthService {
         "bunsiness-onboarding");
         return response;
     }
+    async validateSellerCode(code:string){
+        const response = this.axiosService.post("/api/seller/validate-seller",{code},"sellercode");
+        return response;
+    }
     get isAuthenticated(){
         return localStorage.getItem(ARCHIFF_AUTH_TOKEN)
     }

@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
 import { TabsModule } from "primeng/tabs";
 import { ProductCardComponent } from "../../../../components/product-card/product-card.component";
-import { electronicProducts } from "../../../../data/data";
+import { ProductService } from "../../../../services/products/products.service";
 
 @Component({
     selector:"filter-product-mobile-view",
@@ -10,5 +10,9 @@ import { electronicProducts } from "../../../../data/data";
     imports: [TabsModule, ProductCardComponent]
 })
 export class FilterProductMobileViewComponent{
-    @Input() products!:typeof electronicProducts;
+    @Input() products!:any[];
+    productService = inject(ProductService);
+    likeProduct(productId:string){
+        this.productService.likeProduct(productId);
+    }
 }

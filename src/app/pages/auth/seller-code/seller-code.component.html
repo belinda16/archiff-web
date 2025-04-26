@@ -17,15 +17,19 @@
         <div class="px-[0px] md:!px-[70px]">
             <h2>Enter Your Seller Code</h2>
             <p>Use your unique ID to access your dashboard</p>
+            <div class="text-[red] mb-4 bg-red-100 px-2 py-2 border border-red-500 rounded-[8px] text-center text-[13px]" *ngIf="this.errorMessage !== ''">{{this.errorMessage}}</div>
             <div class="input-group">
-                <input type="text" id="code" />
+                <input [(ngModel)]="sellerCode" type="text" id="code" />
             </div>
-            <a routerLink="/seller">
-                <button  class="verify-btn flex items-center justify-center">
+            <button (click)="validateSellerCode()" class="verify-btn flex items-center justify-center">
+                @if(loading){
+                    <span>VERIFYING</span>
+                    <app-loader [loading]="loading"></app-loader>
+                }@else {
                     VERIFY ME
                     <img style="color:white" src="/assets/icons/arrow-right-white.svg" alt="" />
-                </button>
-            </a>
+                }
+            </button>
             <p class="text-[rgba(95, 108, 114, 1)] my-[24px] text-center">Don't have a code? 
                 <a class=" underline" href="/onboarding">Start onboarding to request one</a>
             </p>

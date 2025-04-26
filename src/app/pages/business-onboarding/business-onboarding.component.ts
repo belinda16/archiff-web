@@ -114,7 +114,6 @@ export class BusinessOnboardingComponent {
         }catch(error){
             if(error instanceof AxiosError){
                 if(error.response?.status === statusCodes.UNAUTHORIZED){
-                    console.log(error.response?.data.message);
                     this.errorMessage = "Please sign in to complete onboarding";
                     setTimeout(()=>{
                         this.router.navigate(['/login']);

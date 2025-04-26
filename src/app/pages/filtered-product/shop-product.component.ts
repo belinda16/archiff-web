@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
 import { electronicProducts } from '../../data/data';
@@ -8,14 +8,24 @@ import { CategoryFilterBarComponent } from "../../components/category-filter-bar
 import { FilterProductMobileViewComponent } from "./components/mobile-view/mobile-view.component";
 import { FilterProductDesktopiewComponent } from "./components/desktop-view/desktop-view.component";
 import { FilterButtonComponent } from "../shop/components/filter-button/filter-button.component";
+import { ProductService } from '../../services/products/products.service';
 
 @Component({
-  selector: 'app-filtered-product-page',
+  selector: 'shop-product-page',
   imports: [NavbarComponent, AboutFooterComponent, FooterComponent, CategoryFilterBarComponent, FilterProductMobileViewComponent, FilterProductDesktopiewComponent, FilterButtonComponent],
-  templateUrl: './filtered-product.component.html',
-  styleUrl: './filtered-product.component.css'
+  templateUrl: './shop-product.component.html',
+  styleUrl: './shop-product.component.css'
 })
-export class FilteredProductPageComponent {
-   products = electronicProducts;
+export class ShopProductComponent {
+   products = []
    categoryLabel = 'Electronics'
+   private productService = inject(ProductService);
+    async ngOnInit(){
+        try{
+            this.products = await this.productService.getProducts();
+        }catch(error){
+            console.log(error);
+        }
+        
+    }
 }

@@ -3,6 +3,10 @@
         border:1px solid rgba(204, 204, 204, 1);
         border-radius: 24px;
         padding: 24px 24px;
+        height:300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .card-brand-name,.card-price{
         color:rgba(54, 54, 54, 1);
@@ -26,14 +30,15 @@
     @media screen and (max-width:700px) {
         .image-wrapper{
             width: 100%;
-            height: 120px;
+            height: auto;
             overflow: hidden;
             display: inline-block;
         }
         .image-wrapper img {
             width: 100%;
             height: 100%;
-            transform: scale(1.4);
+            /* transform: scale(1.4); */
+            object-fit: cover;
             display: block;
         }
     }
@@ -73,7 +78,7 @@
         </div>
     </div>
     <div >
-        <h2 class="card-brand-name">{{product.brandName}}</h2>
+        <h2 class="card-brand-name">{{product.title}}</h2>
         <p  class="card-description">{{product.description}}</p>
         <div class="flex justify-between items-center text-[14px] card-price-container">
             <p class="card-price !mb-0">${{product.price}}+</p>
@@ -94,9 +99,11 @@
         <a routerLink="/product-details" class="w-full"> 
             <button class="flex items-center py-2 lg:py-3 text-[12px] justify-center view-deal-button">
                 <span class="text-[14px]">VIEW DEAL</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.79527 11.5L0.125 9.8308L7.17647 2.77683H1.87913L1.8931 0.5H11.125V9.73302H8.83276L8.84673 4.44603L1.79527 11.5Z" fill="white"/>
-                </svg>
+                <div>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.79527 11.5L0.125 9.8308L7.17647 2.77683H1.87913L1.8931 0.5H11.125V9.73302H8.83276L8.84673 4.44603L1.79527 11.5Z" fill="white"/>
+                    </svg>
+                </div>
             </button>
         </a>
         <ng-content></ng-content>

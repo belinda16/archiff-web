@@ -62,4 +62,18 @@ export class AxiosService {
     const response = await this.axiosInstance.post(url, body,config);
     return response;
   }
+  public async put(url: string, body: any,requestId?:string) {
+    let abortController:AbortController|null; 
+    let config:AxiosRequestConfig|undefined;
+    if(requestId){
+        abortController = new AbortController;
+        this.abortRequest(requestId);
+        this.abortControllers.set(requestId, abortController);
+        config = {
+          signal:abortController.signal
+        }
+    }
+    const response = await this.axiosInstance.put(url, body,config);
+    return response;
+  }
 }

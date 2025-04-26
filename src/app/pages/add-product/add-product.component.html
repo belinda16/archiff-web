@@ -1,0 +1,153 @@
+<style>
+    ::ng-deep .p-placeholder{
+    color:#475156 !important;
+}
+::ng-deep .p-select-label{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    color:#475156;
+}
+::ng-deep .p-select{
+    border:1px solid rgba(241, 241, 241, 1) !important;
+    border-radius: 0px!important;
+    padding:5px !important;
+    width: 100% !important;
+}
+::ng-deep .p-select:not(.disabled).p-focus{
+    outline:2px solid #000 !important;
+    outline-offset: -2px !important;
+}
+::ng-deep .p-select-option{
+    color:rgba(103, 103, 103, 1) !important;
+    font-size: 14px !important;
+}
+::ng-deep .p-select-dropdown-icon{
+    width:12px !important;
+    height: 12px !important;
+    color: rgba(169, 169, 169, 1) !important;
+}
+::ng-deep .p-select-overlay{
+    box-shadow: 0px 4px 12px 3px #0064A71A !important;
+    border-radius: 8px!important;
+}
+::ng-deep .p-select-option.p-select-option-selected{
+    background:rgba(35, 35, 35, 0.874)!important;
+    color: white !important;
+}
+::ng-deep .p-select-option.p-select-option-selected.p-focus {
+    background:rgba(35, 35, 35, 0.874)!important;
+    color: white !important;
+}
+    .input-group {
+        text-align: left;
+        margin-bottom: 24px;
+    }
+    label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 14px;
+}
+input {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(228, 231, 233, 1);
+    font-size: 14px;
+    color:rgba(71, 81, 86, 1);
+    font-weight: 400;
+    width: 100%;
+}
+input::placeholder{
+    color:#475156;
+}
+</style>
+<div>
+    <p-toast position="top-center" />
+    <app-navigation-back-component title="Upload New Product" />
+    <div class="lg:border-2 lg:border-[#E4E7E9] rounded-[16px] py-[45px] px-[15px] md:px[20px] lg:px-[30px] lg:px-[100px] ">  
+        <div class="flex gap-7 flex-col xl:flex-row">
+        <div (drop)="onDrop($event)" (dragover)="onDragOver($event)" #dropzone class="border grow-[2] border-dashed border-[#CBD0DC] flex flex-col items-center gap-4 px-[30px] lg:px-[100px] rounded-[20px] pt-[70px] pb-[40px]">  
+            <h3 class="text-[20px] text-[#292D32] font-normal leading-[20px] text-center">Choose a file or drag & drop it here</h3>
+            <h4 class="font-normal text-[14px] text-[#A9ACB4] leading[14px] text-center">JPEG and PNG,up to 50MB</h4>
+            <input #fileInput type="file" (change)="onFileSelected($event)" hidden accept="images/*">
+            <button (click)="openFile()" class="border-2 border-[#CBD0DC] py-2 rounded-[8px] text-[#54575C] max-w-[250px] w-full font-semibold text-center">Browse File</button>
+        </div>
+        <div class="grid grid-cols-[120px_120px] gap-4">
+            @for(imageUrl of productImageUrls;track imageUrl;let index = $index){
+                <div class="relative bg-[#F7F7FA] flex rounded-[8px] items-center justify-center h-full max-h-[120px]">
+                    <img width="80" height="50" [src]="imageUrl" alt="" />
+                    <button [attr.data-imageUrl]="imageUrl" (click)="removeImage($event)" class="absolute bottom-[5px] right-[6px] cursor-pointer">
+                        <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.78906 18.5C3.23906 18.5 2.76823 18.3042 2.37656 17.9125C1.9849 17.5208 1.78906 17.05 1.78906 16.5V3.5H0.789062V1.5H5.78906V0.5H11.7891V1.5H16.7891V3.5H15.7891V16.5C15.7891 17.05 15.5932 17.5208 15.2016 17.9125C14.8099 18.3042 14.3391 18.5 13.7891 18.5H3.78906ZM13.7891 3.5H3.78906V16.5H13.7891V3.5ZM5.78906 14.5H7.78906V5.5H5.78906V14.5ZM9.78906 14.5H11.7891V5.5H9.78906V14.5Z" fill="#FF3B30"/>
+                        </svg>
+                    </button>
+                </div>
+            }
+        </div>
+        </div>
+        <form [formGroup]="productFormGroup" class="mt-8">
+            <div class="grid lg:grid-cols-[1fr_1fr_1fr] lg:gap-4">
+                <div class="input-group">
+                    <label class="text-[#191C1F]" for="title">Product Name</label>
+                    <input formControlName="title" class="w-full" type="text" id="title" />
+                </div>
+                <div class="input-group">
+                    <label class="text-[#191C1F]" for="category">Product Category</label>
+                    <p-select 
+                        [options]="categories"
+                        placeholder="Select category"
+                        [showClear]="true"
+                        optionLabel="name"
+                        id="category"
+                        (onChange)="onCategorySelect($event)"
+                    />
+                </div>
+                <div class="input-group">
+                    <label class="text-[#191C1F]" for="price">Price</label>
+                    <input formControlName="price" class="w-full" type="text" id="price" />
+                </div>
+                <div class="input-group">
+                    <label class="text-[#191C1F]" for="quantity">Quantity</label>
+                    <input formControlName="quantity" class="w-full" type="number" id="quantity" />
+                </div>
+            </div>
+                <form class="grid lg:grid-cols-[repeat(3,1fr)] gap-6 mb-7" *ngIf="selectedCategory" [formGroup]="dynamicForm">
+                    <div *ngFor="let field of selectedCategory!.dynamicFields">
+                        <label>{{ field.name}}</label>
+                        <input *ngIf="field.type === 'string' || field.type === 'number'" [type]="field.type === 'number' ? 'number' : 'text'" [formControlName]="field.name">
+                        <div class="flex items-start h-full">
+                            <input class="!h-6 !w-6 mt-2" *ngIf="field.type === 'boolean'" type="checkbox" [formControlName]="field.name">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[#191C1F]" for="category">Product Type</label>
+                        <p-select 
+                            [options]="this.productType"
+                            placeholder="Select Product Type "
+                            [showClear]="true"
+                            id="category"
+                            (onChange)="onProductTypeSelect($event)"
+                        />
+                    </div>
+                </form>
+            <div>
+                <div class="input-group">
+                    <label class="text-[#191C1F]" for="description">Description</label>
+                    <textarea formControlName="description" rows="5" placeholder="Description" id="description" class="focus:outline-[#333]" style="width:100%; padding:24px; border:1px solid rgba(228, 231, 233, 1);"></textarea>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-[1fr_1fr] gap-5 my-8">
+                <button class="border-2 px-4 py-2 w-full border-[#090909]">CANCEL </button>
+                <button class="border-2 px-4 py-2 w-full !bg-[#090909] text-[white] flex items-center justify-center" (click)="publishProduct()">
+                    @if(loading){
+                        <span>PUBLISHING</span>
+                        <app-loader [loading]="loading"></app-loader>
+                    }@else {
+                        <span>PUBLISH</span>
+                    }
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

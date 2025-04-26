@@ -8,11 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
-  @Input() product = {
-    imageUrl:'',
-    altText:'',
-    brandName:'',
-    description:'',
-    price:0
-  }
+  @Input() product:any;
 }

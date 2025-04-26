@@ -54,19 +54,20 @@
     </aside>
     <main>
         <div class="flex items-center justify-between filter-wrapper">
-            <div class="flex items-center filter-list-container">
+            <!-- <div class="flex items-center filter-list-container">
                 <span>Applied Filters:  </span>
                 <div class="filter-list flex items-center">
                     <span class="filter-name">Electronics <button class="filter-close-button">x</button></span>
                     <span class="filter-name">5 Star Rating <button class="filter-close-button">x</button></span>
                 </div>
-            </div>
-            <div style="color:rgba(25, 28, 31, 1)">65586 <span style="color:rgba(95, 108, 114, 1)">Results found</span></div>
+            </div> -->
+            <div style="color:rgba(25, 28, 31, 1)">{{products.length}} <span style="color:rgba(95, 108, 114, 1)">Results found</span></div>
         </div>
         <div class="products-container">
             @for(product of products.slice(0,5); track product.id){
                 <app-product-card [product]="product">
                     <button 
+                        (click)="likeProduct(product.id)"
                         class="flex items-center justify-center"
                         style="height: 48px; width: 48px;border-radius: 50%; border:1.5px solid rgba(24, 166, 97, 1);
                         flex-shrink:0;">
@@ -79,7 +80,7 @@
                 <div class="flex flex-column justify-content items-center choosing-laptop-text">
                     <h2> Choosing </h2>
                     <h2>your next</h2>
-                    <h2>Laptop</h2>
+                    <h2>Electronic</h2>
                 </div>
                 <div class="learn-more">
                     <a href="#">Learn more →</a>

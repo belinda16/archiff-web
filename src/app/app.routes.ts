@@ -11,7 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OffersComponent } from './pages/offers/offers.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CategoryselectedComponent } from './pages/categoryselected/categoryselected.component';
-import { FilteredProductPageComponent } from './pages/filtered-product/filtered-product.component';
+import { ShopProductComponent } from './pages/filtered-product/shop-product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OnboardingComponent } from './pages/onboarding/onboarding.component';
@@ -21,10 +21,11 @@ import { SellerCodeComponent } from './pages/seller-code/seller-code.component';
 import { OtpGuard } from './pages/auth/verification/guard/verify.guard';
 import { NotFoundComponent } from './pages/404/404.component';
 import { ResetPassword } from './pages/auth/reset-password/components/reset-password.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
 
 export const routes: Routes = [
     {path:'', component:HomeComponent, pathMatch: 'full' },
-    {path:'shop', component: FilteredProductPageComponent},
+    {path:'shop', component: ShopProductComponent},
     {path:'category',component:ShopComponent},
     { 
         path:'sell',
@@ -36,7 +37,8 @@ export const routes: Routes = [
         children: [
             { path: '', component: DashboardComponent },
             { path: 'offers', component: OffersComponent},
-            { path: 'products', component: ProductsComponent} 
+            { path: 'products', component: ProductsComponent},
+            { path: 'add-product',component:AddProductComponent}
         ]
     },
     { path:'login',component:LoginComponent},
@@ -45,7 +47,7 @@ export const routes: Routes = [
     { path:'reset-password',component:ResetPassword},
     { path:'profile',component:ProfileComponent},
     { path:'shop/:category',component:CategoryselectedComponent},
-    { path:'filtered-product',component:FilteredProductPageComponent},
+    // { path:'filtered-product',component:ShopProductComponent},
     { path:'product-details',component:ProductDetailsComponent},
     { path:'checkout',component:CheckoutComponent},
     { path:'onboarding',component:SellerCodeComponent},
