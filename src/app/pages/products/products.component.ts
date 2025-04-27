@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TableModule } from 'primeng/table';
+import { SellerService } from '../../services/seller/seller.service';
 
 @Component({
   selector: 'app-products',
@@ -8,9 +9,19 @@ import { TableModule } from 'primeng/table';
   styleUrls: ['./products.component.css','../shared.css']
 })
 export class ProductsComponent {
-  products = [
-    { name: 'Mac Book Pro', category: 'Electronics', stock: 2, promoStatus: 'Active', promoClass: 'active', createdDate: '21.03.2021' },
-    { name: 'Mac Book Pro', category: 'Electronics', stock: 2, promoStatus: 'Cancelled', promoClass: 'cancelled', createdDate: '21.03.2021' },
-    { name: 'Mac Book Pro', category: 'Electronics', stock: 2, promoStatus: 'No Promo', promoClass: 'no-promo', createdDate: '21.03.2021' },
-  ];
+
+  products = [];
+  private sellerService = inject(SellerService);  
+
+
+
+  async ngOnInit() {
+    try {
+      this.products = await this.sellerService.products();
+      console.log(this.products);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
 }

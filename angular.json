@@ -28,6 +28,7 @@
               }
             ],
             "styles": [
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -93,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a0ba539a-71e2-4712-9fa5-d4817cddc9c3"
   }
 }

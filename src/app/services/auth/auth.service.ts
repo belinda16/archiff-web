@@ -35,9 +35,9 @@ export class AuthService {
         return response;
     }
     async signOut(){
-        const response = await this.axiosService.post('/api/auth/logout',"sign-out");
+        // const response = await this.axiosService.post('/api/auth/logout',"sign-out");
         localStorage.removeItem(ARCHIFF_AUTH_TOKEN);
-        return response;
+        return {status: 200, success: true};
     }
     storeToken(token:string){
         localStorage.setItem(ARCHIFF_AUTH_TOKEN, JSON.stringify(token));
@@ -98,5 +98,10 @@ export class AuthService {
     }
     get isAuthenticated(){
         return localStorage.getItem(ARCHIFF_AUTH_TOKEN)
+    }
+    async isSeller(){
+        const response = this.axiosService.get('api/seller/is-seller',
+        "seller");
+        return response;
     }
 }

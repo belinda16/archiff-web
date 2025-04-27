@@ -13,7 +13,7 @@ export class NavbarComponent{
     authService = inject(AuthService)
     @ViewChild('menu') menu!: ElementRef; 
     visible = false;
-    constructor(private router:Router){}
+    constructor(private router:Router,){}
     toggleMenu(){
         this.visible = !this.visible
     }
@@ -35,4 +35,5 @@ export class NavbarComponent{
         }
         
     }
+
 }

@@ -37,5 +37,5 @@
 <div class="menu">
     <a (click)="makeLinkActive($event)" routerLink="/" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home </a>
     <a (click)="makeLinkActive($event)" routerLink="/shop" class="menu-item"  routerLinkActive="active">Buy</a>
-    <a (click)="makeLinkActive($event)" routerLink="/sell" class="menu-item"  routerLinkActive="active">Sell</a>
+    <a (click)="navigateSeller($event)"  class="menu-item"  routerLinkActive="active">Sell</a>
 </div>

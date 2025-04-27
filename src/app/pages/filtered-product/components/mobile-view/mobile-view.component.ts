@@ -12,7 +12,7 @@ import { ProductService } from "../../../../services/products/products.service";
 export class FilterProductMobileViewComponent{
     @Input() products!:any[];
     productService = inject(ProductService);
-    async likeProduct(productId:string){
-       await this.productService.likeProduct(productId);
+    likeProduct(productId:string){
+        this.productService.likeProduct(productId);
     }
 }

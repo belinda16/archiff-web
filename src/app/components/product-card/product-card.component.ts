@@ -1,37 +1,28 @@
-import { Component, inject, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { ProductService } from '../../services/products/products.service';
-import { AxiosError } from 'axios';
-import { statusCodes } from '../../constants/status-codes';
-import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
-  imports: [RouterLink,ToastModule],
+  imports: [RouterLink],
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css',
-  providers:[MessageService]
+  styleUrl: './product-card.component.css'
 })
-export class ProductCardComponent {
-  @Input() product:any;
-  constructor(private router:Router){
+export class ProductCardComponent implements OnInit {
+  @Input() product: any;
+
+
+  ngOnInit(): void {
+    console.log(this.product.images)
   }
-  productService = inject(ProductService);
-  messageService = inject(MessageService)
-  async viewDeal(productId:string){
-    try {
-      let response = await this.productService.viewDeal(productId);
-      if (response.status === statusCodes.CREATED) {
-      this.router.navigate(["product-details", productId]);
-      }
-    }catch(error){
-      if(error instanceof AxiosError && error.response?.status === statusCodes.UNAUTHORIZED){
-        this.messageService.add({ severity: 'error', summary: 'Unauthorized', detail: 'You need to login to view this deal' });
-        setTimeout(()=>{
-            this.router.navigate(['/login']);
-        },3000)
-      }
+
+
+  getFirstImageUrl(images: any[]): string {
+    // Check if the images array is not empty and the first image has a valid imageUrl
+    if (images && images.length > 0 && images[0].imageUrl) {
+      return images[0].imageUrl;
+    } else {
+      // Return a default URL if no valid imageUrl is found
+      return 'assets/images/logo/store-logo-1.svg'; // Replace with your default image URL
     }
   }
 }
