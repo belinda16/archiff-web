@@ -48,7 +48,7 @@ export const routes: Routes = [
     { path:'profile',component:ProfileComponent},
     { path:'shop/:category',component:CategoryselectedComponent},
     // { path:'filtered-product',component:ShopProductComponent},
-    { path:'product-details',component:ProductDetailsComponent},
+    { path:'product-details/:productId',component:ProductDetailsComponent},
     { path:'checkout',component:CheckoutComponent},
     { path:'onboarding',component:SellerCodeComponent},
     { path:'individual-onboarding',component:OnboardingComponent},

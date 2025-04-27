@@ -4,5 +4,6 @@ export const statusCodes = {
     UNAUTHORIZED:401,
     BAD_REQUEST:400,
     INTERNAL_SERVER_ERROR:500,
-    FORBIDDEN:403
+    FORBIDDEN:403,
+    NOT_FOUND:404,
 }

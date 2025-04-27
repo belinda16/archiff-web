@@ -3,7 +3,7 @@
         border:1px solid rgba(204, 204, 204, 1);
         border-radius: 24px;
         padding: 24px 24px;
-        height:300px;
+        height:500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -44,7 +44,8 @@
     }
     .image-wrapper img{
         width: 100%;
-        height: auto;
+        max-height: 200px;
+        object-fit: contain;
     }
     .card-brand-name{
         font-size: 20px;
@@ -72,9 +73,10 @@
     }
 </style>
 <div class="card">
+    <p-toast position="top-center" />
     <div class="card-image">
         <div class="image-wrapper ">
-         <img width="150" [src]="product.imageUrl" [alt]="product.altText"/>
+         <img width="150" [src]="product.images[0]?.imageUrl" [alt]="product.altText"/>
         </div>
     </div>
     <div >
@@ -96,16 +98,14 @@
         </div>
     </div> -->
     <div style="gap:10px" class="flex items-center justify-between  mt-3">
-        <a routerLink="/product-details" class="w-full"> 
-            <button class="flex items-center py-2 lg:py-3 text-[12px] justify-center view-deal-button">
-                <span class="text-[14px]">VIEW DEAL</span>
-                <div>
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.79527 11.5L0.125 9.8308L7.17647 2.77683H1.87913L1.8931 0.5H11.125V9.73302H8.83276L8.84673 4.44603L1.79527 11.5Z" fill="white"/>
-                    </svg>
-                </div>
-            </button>
-        </a>
+        <button (click)="viewDeal(product.id)" class="flex items-center py-2 lg:py-3 text-[12px] justify-center view-deal-button">
+            <span class="text-[14px]">VIEW DEAL</span>
+            <div>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.79527 11.5L0.125 9.8308L7.17647 2.77683H1.87913L1.8931 0.5H11.125V9.73302H8.83276L8.84673 4.44603L1.79527 11.5Z" fill="white"/>
+                </svg>
+            </div>
+        </button>
         <ng-content></ng-content>
     </div>
 </div>

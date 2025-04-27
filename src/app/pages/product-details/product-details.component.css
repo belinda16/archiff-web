@@ -220,7 +220,7 @@
     padding-right:100px;
 }
 .thumbnail-container {
-    width: 100%;
+    width: fit-content;
     display: flex;
     gap: 12px;
     overflow-x: auto;
@@ -229,11 +229,12 @@
 
 .thumbnail {
     flex-grow:1;
-    height: 60px;
+    height: 80px;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     opacity: 0.7;
+    object-fit: contain;
 }
 
 .thumbnail.active {

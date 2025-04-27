@@ -11,8 +11,5 @@ import { RouterLink,RouterLinkActive, RouterOutlet,RouterModule, Router } from '
 export class SellerDashboardComponent {
   constructor(private router: Router) {
     const nav = this.router.getCurrentNavigation();
-    // if( ! nav!.extras.state){
-    //   router.navigate(['/sell']);
-    // }
   }
 }

@@ -7,30 +7,28 @@
     <div class="product-container">
         <div>
             <div class="product-image">
-                <img class="slider-image" src="/assets/images/opened-mac-book-pro.svg" alt="MacBook Pro">
+                <img class="slider-image" [src]="product.images[0].imageUrl" alt="MacBook Pro">
             </div>
             <div class="thumbnail-container">
-                <img class="thumbnail active" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 1">
-                <img class="thumbnail" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 2">
-                <img class="thumbnail" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 3">
-                <img class="thumbnail" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 4">
-                <img class="thumbnail" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 5">
-                <img class="thumbnail" src="/assets/images/opened-mac-book-pro.svg" alt="Thumbnail 6">
+
+                @for(image of product.images;track image){
+                    <img class="thumbnail" [src]="image.imageUrl" alt="">
+                }
             </div>
         </div>
         <div class="product-details">
-            <h2 class="product-title">2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray</h2>
+            <h2 class="product-title">{{product.title}}</h2>
             <div class="flex justify-between items-center product-info">
                 <div class="flex flex-column" style="gap:8px">
                     <p class="product-sku">Sku: A264671</p>
                     <p class="product-brand">Brand: Apple</p>
                 </div>
                 <div class="flex flex-column" style="gap:8px">
-                    <p class="product-availability"><span style="color:rgba(95, 108, 114, 1)">Availability:</span> In Stock</p>
-                    <p class="product-category">Category: Electronics Devices</p>
+                    <p class="product-availability"><span style="color:rgba(95, 108, 114, 1)">Availability: </span>{{product.soldStatus}}</p>
+                    <p class="product-category">Category: {{product.category.name}}</p>
                 </div>
             </div>
-            <p class="product-price">$1699 <span class="product-original-price">$1999.00</span> <span class="product-discount">21% OFF</span></p>
+            <p class="product-price">$699 <span class="product-original-price">${{product.price}}</span> <span class="product-discount">21% OFF</span></p>
             <div class="product-options-container">
                
                     <div class="product-options">
@@ -115,9 +113,7 @@
                     <div class="content">
                         <div class="left-section">
                             <h2>Description</h2>
-                            <p>The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and amazing battery life. Add to that a stunning Liquid Retina XDR display, the best camera and audio ever in a Mac notebook, and all the ports you need. The first notebook of its kind, this MacBook Pro is a beast. M1 Pro takes the exceptional performance of the M1 architecture to a whole new level for pro users.</p>
-                            <br>
-                            <p>Even the most ambitious projects are easily handled with up to 10 CPU cores, up to 16 GPU cores, a 16-core Neural Engine, and dedicated encode and decode media engines that support H.264, HEVC, and ProRes codecs.</p>
+                           <p>{{product.description}}</p>
                         </div>
                         <div class="right-section">
                             <div class="features">

@@ -12,8 +12,8 @@ import { ProductService } from "../../../../services/products/products.service";
 export class FilterProductDesktopiewComponent{
     @Input() products!:any[];
     productService = inject(ProductService);
-    likeProduct(productId:string){
-        this.productService.likeProduct(productId)
+    async likeProduct(productId:string){
+       await this.productService.likeProduct(productId);
     }
     
 }
