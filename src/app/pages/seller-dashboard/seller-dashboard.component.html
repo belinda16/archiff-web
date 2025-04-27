@@ -8,9 +8,9 @@
         <div class="search-input-group">
             <input class="search-input" type="text" placeholder="Search..." />
         </div>
-        <button class="add-product desktop">ADD PRODUCT</button>
+        <button class="add-product desktop" routerLink="/sell">ADD PRODUCT</button>
     </div>
-    <button class="add-product mobile">ADD PRODUCT</button>
+    <button class="add-product mobile" routerLink="/sell">ADD PRODUCT</button>
     <main class="dashboard-content">
         <aside>
             <nav class="flex flex-column  sidebar">
@@ -26,7 +26,7 @@
                   <img src="/assets/icons/products-icon.svg" />
                   <span>Products</span>
               </a>
-              <a routerLinkActive="active" routerLink="/seller/settings" class="flex items-center sidebar-item">
+              <a routerLinkActive="active" routerLink="/profile" class="flex items-center sidebar-item">
                   <img src="/assets/icons/settings-icon.svg" />
                   <span>Profile and Settings</span>
               </a>

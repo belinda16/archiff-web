@@ -52,7 +52,7 @@
             <tr>
               <th>Product</th>
               <th>Category</th>
-              <th>Stock</th>
+              <th>Status</th>
               <th>Promo Status</th>
               <th>Created Date</th>
               <th></th>
@@ -60,13 +60,13 @@
           </ng-template>
           <ng-template pTemplate="body" let-product let-i="rowIndex">
             <tr>
-              <td>{{ product.name }}</td>
-              <td>{{ product.category }}</td>
-              <td>{{ product.stock }}</td>
+              <td>{{ product.title }}</td>
+              <td>{{ product.category.name }}</td>
+              <td>{{ product.soldStatus }}</td>
               <td>
-                <span class="promo-badge">{{ product.promoStatus }}</span>
+                <span class="promo-badge">none</span>
               </td>
-              <td>{{ product.createdDate }}</td>
+              <td>{{ product.createdAt }}</td>
             <td> 
              <button>
                  <img src="/assets/icons/delete-bin.svg" />

@@ -23,7 +23,7 @@ export class ProductService {
         return responses;
     }
     likeProduct(productId:string){
-        const response = this.axiosService.post(`/api/product/${productId}/like`,"","like-produts");
+        const response = this.axiosService.post(`/api/product/${productId}/like`,"like-produts");
         return response;
     }
     getCategories(){
@@ -32,14 +32,6 @@ export class ProductService {
     }
     addProduct(product:any){
         const response = this.axiosService.post(`/api/products`,product,"add-product");
-        return response;
-    }
-    viewDeal(productId:string){
-        const response = this.axiosService.post(`/api/product/${productId}/view`,"","view-deal");
-        return response;
-    }
-    getProductDetails(productId:string){
-        const response = this.axiosService.get(`/api/products/${productId}`,"product-details");
         return response;
     }
 }

@@ -18,35 +18,47 @@ import { LoaderComponent } from "../../../components/loader/loader.component";
 })
 export class LoginSellerCodeComponent {
   loading = false;
-  sellerCode="";
+  sellerCode = "";
   authService = inject(AuthService);
   errorMessage = "";
   success = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  async validateSellerCode(){
-    try {
-      this.loading = true;
+  async validateSellerCode() {
+    if (this.authService.isAuthenticated) {
       try {
-        const response = await this.authService.validateSellerCode(this.sellerCode);
-        if (response.status === statusCodes.OK && response.data.success) {
-          this.success = response.data.success;
-          this.router.navigate(["/seller"],{state:{success:this.success}});
-          return;
-        }
-      } catch (error) {
-        if (error instanceof AxiosError) {
-          const status = error.response?.status;
-          if (status === statusCodes.UNAUTHORIZED) {
-            this.errorMessage = "Please sign in to access dashboard";
-            setTimeout(() => this.router.navigate(['/login']), 2000);
-          } else if (status === statusCodes.BAD_REQUEST) {
+        this.loading = true;
+        try {
+          const response = await this.authService.validateSellerCode(this.sellerCode);
+          if (response.status === statusCodes.OK && response.data.success) {
+            this.success = response.data.success;
+            this.router.navigate(["/seller/add-product"], { state: { success: this.success } });
+            return;
+          }
+        } catch (error) {
+          if (error instanceof AxiosError) {
+            const status = error.response?.status;
+            if (status === statusCodes.UNAUTHORIZED) {
+              this.errorMessage = "Please sign in to access dashboard";
+              setTimeout(() => this.router.navigate(['/login']), 2000);
+            } else if (status === statusCodes.BAD_REQUEST) {
               this.errorMessage = this.sellerCode ? "Invalid code provided." : "Code is required";
+            }
           }
         }
+      } finally {
+        this.loading = false;
       }
-    } finally {
-      this.loading = false;
+    } else {
+      this.router.navigate(["/login"]);
+    }
+  }
+
+  sellerOnBoarding() {
+    if (this.authService.isAuthenticated) {
+      this.router.navigate(["/onboarding"]);
+    } else {
+      this.router.navigate(["/login"]);
     }
   }
 }

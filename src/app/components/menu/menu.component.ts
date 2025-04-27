@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterLinkActive, RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLinkActive, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'nav-menu',
@@ -8,6 +10,9 @@ import { RouterLinkActive, RouterModule } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+
+  authService = inject(AuthService)
+  constructor(private router:Router, private spinner: NgxSpinnerService){}
   makeLinkActive(e:MouseEvent){
     const eTarget = e.target as HTMLAnchorElement;
     e.preventDefault();
@@ -17,5 +22,29 @@ export class MenuComponent {
 
     // border.style.width = linkWidth + 'px';
     // border.style.left = linkOffset + 'px';
+
+
+    
   }
+
+  async navigateSeller(e:MouseEvent){
+    this.spinner.show();
+    try{
+       const isSeller =  await this.authService.isSeller();
+       this.makeLinkActive(e);
+        if(isSeller){
+          this.router.navigate(["/seller"]);
+        }
+        else{
+          if(this.authService.isAuthenticated){
+            this.router.navigate(["/onboarding"]);
+          }
+          else{
+            this.router.navigate(["/login"]);
+          }
+        }
+    }catch(error){
+        console.log(error);
+    }
+}
 }

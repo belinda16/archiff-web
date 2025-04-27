@@ -45,32 +45,32 @@
 <div>
     <h1 class="offer-info-header">Offers</h1>
 <div class="offer-table-container">
-    <p-table [value]="offers" class="custom-table">
+    <p-table [value]="deals" class="custom-table">
     <ng-template pTemplate="header">
         <tr>
-        <th>Offer</th>
-        <th>Option</th>
-        <th>Option</th>
-        <th>Option</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>User</th>
         <th>Date</th>
-        <th>Action</th>
+        <th>Email</th>
+        <th>Ca</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-offer let-i="rowIndex">
         <tr>
-        <td>{{ offer.offer }}</td>
-        <td>{{ offer.option1 }}</td>
-        <td>{{ offer.option2 }}</td>
-        <td>{{ offer.option3 }}</td>
-        <td>{{ offer.date }}</td>
+        <td>{{ offer.product.title }}</td>
+        <td>{{ offer.product.price }}</td>
+        <td>{{ offer.user.fullName }}</td>
+        <td>{{ offer.viewedAt }}</td>
+        <td>{{ offer.user.email }}</td>
         <td>
-            <a href="#" class="contact-link">{{ offer.contact }}</a>
+            <a href="tel:{{ offer.user.phoneNumber }}" class="contact-link">{{ offer.user.phoneNumber }}</a>
         </td>
-        <td> 
+        <!-- <td> 
             <button>
                 <img src="/assets/icons/delete-bin.svg" />
             </button>
-        </td>
+        </td> -->
         </tr>
     </ng-template>
     </p-table>
